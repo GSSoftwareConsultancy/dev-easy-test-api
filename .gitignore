@@ -39,3 +39,6 @@ test-output
 atlassian-ide-plugin.xml
 .gradletasknamecache
 
+.gitignore
+src/main/resources/
+src/test/resources/
