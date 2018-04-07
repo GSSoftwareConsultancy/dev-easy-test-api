@@ -1,13 +1,12 @@
-package org.deveasy.test.feature;
+package cucumber.steps;
 
 import cucumber.api.java.en.Given;
-import org.deveasy.test.feature.org.deveasy.test.feature.state.ScenarioState;
+import org.deveasy.test.feature.state.ScenarioState;
 import org.flywaydb.core.Flyway;
 
 
 /**
  * Steps for managing the Application Database.
- * Currently support only {@link Flyway} migration tool.
  */
 public class DatabaseMigrationSteps {
 
@@ -16,10 +15,10 @@ public class DatabaseMigrationSteps {
     public static final String DEFAULT_USER = "dev";
     public static final String DEFAULT_PASSWORD = "P4ssw0rd";
 
-    private final ScenarioState sharedCucumberStepsData;
+    private final ScenarioState scenarioState;
 
-    public DatabaseMigrationSteps(ScenarioState sharedCucumberStepsData) {
-        this.sharedCucumberStepsData = sharedCucumberStepsData;
+    public DatabaseMigrationSteps(ScenarioState scenarioState) {
+        this.scenarioState = scenarioState;
     }
 
     @Given("^Required tables and data are setup using flyway$")
