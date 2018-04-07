@@ -1,4 +1,5 @@
 package org.deveasy.test.core;
+
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;
@@ -27,16 +28,15 @@ public final class ResourceHelper {
     }
 
 
-
     public static <T> T readJsonAsObject(String file, Class<T> className) throws IOException {
         return objectMapper.readValue(file, className);
     }
-
 
 
     public static <T> List<T> readJsonAsObjectForList(String file, Class<T> clazz) throws IOException {
         JavaType type = objectMapper.getTypeFactory().constructCollectionType(List.class, clazz);
         return objectMapper.readValue(file, type);
     }
+
 
 }
