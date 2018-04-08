@@ -22,11 +22,11 @@ import org.deveasy.test.feature.state.ScenarioState;
  * Currently support Spring, Spring Boot and Drop Wizard Applications
  * @author Joseph Aruja GS Software Consultancy Ltd
  */
-public class DatabaseSteps {
-
+public class AwsKinesisSteps {
     private final ScenarioState scenarioState;
 
-    public DatabaseSteps(ScenarioState scenarioState) {
+    public AwsKinesisSteps(ScenarioState scenarioState) {
         this.scenarioState = scenarioState;
     }
+
 }
