@@ -6,11 +6,6 @@
     <artifactId>dev-easy-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>9</version>
-    </parent>
     <modules>
         <module>test-core</module>
         <module>test-feature</module>
