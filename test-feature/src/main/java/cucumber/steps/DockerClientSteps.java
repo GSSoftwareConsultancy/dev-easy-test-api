@@ -18,8 +18,8 @@ package cucumber.steps;
 import org.deveasy.test.feature.state.ScenarioState;
 
 /**
- * Steps for managing the Application.
- * Currently support Spring, Spring Boot and Drop Wizard Applications
+ * Generic Steps for managing a docker container
+ * @see com.spotify.docker.client.DockerClient
  * @author Joseph Aruja GS Software Consultancy Ltd
  */
 public class DockerClientSteps {

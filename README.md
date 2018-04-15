@@ -22,7 +22,7 @@ DEV EASY TEST API for Java
   code for all the APIs we are using for application.
   But when we analyse the testing ecosystem, we have a number of API's doing a specific thing and we need a framework
   in testing area that can provide a generic way of testing java applications built using various frameworks. We also 
-  need some reference implementations to demontrate the usage of this API in varous applications built using the below
+  need some reference implementations to demonstrate the usage of this API in varous applications built using the below
   technologies.
   
   
