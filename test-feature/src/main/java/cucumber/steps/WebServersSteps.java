@@ -18,9 +18,11 @@ package cucumber.steps;
 import org.deveasy.test.feature.state.ScenarioState;
 
 /**
- *
+ * Generic Steps for managing web servers
+ * @see com.github.tomakehurst.wiremock.client.WireMock
  */
 public class WebServersSteps {
+
     private final ScenarioState scenarioState;
 
     public WebServersSteps(ScenarioState scenarioState) {

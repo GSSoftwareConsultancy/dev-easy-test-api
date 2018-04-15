@@ -21,8 +21,10 @@ import org.deveasy.test.feature.state.ScenarioState;
 import java.util.HashMap;
 
 /**
- * Steps for mocking external service dependencies
+ * Generic Steps for mocking external service dependencies
  * @see com.github.tomakehurst.wiremock.client.WireMock
+ *
+ * @author Joseph Aruja GS Software Consultancy Ltd
  */
 public class WireMockSteps {
 

@@ -26,7 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 
 /**
  * Steps for managing the Application.
- * Currently support Spring, Spring Boot and Drop Wizard Applications
+ * Currently Spring, Spring Boot and Drop Wizard Applications
  * @see org.springframework.boot.SpringApplication
  * @see io.dropwizard.Application
  * @author Joseph Aruja GS Software Consultancy Ltd

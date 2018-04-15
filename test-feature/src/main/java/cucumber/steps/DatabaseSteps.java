@@ -18,8 +18,8 @@ package cucumber.steps;
 import org.deveasy.test.feature.state.ScenarioState;
 
 /**
- * Steps for managing the Application.
- * Currently support Spring, Spring Boot and Drop Wizard Applications
+ * Steps for managing the database records
+ *
  * @author Joseph Aruja GS Software Consultancy Ltd
  */
 public class DatabaseSteps {
