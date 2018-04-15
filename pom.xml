@@ -55,18 +55,9 @@
             <groupId>com.spotify</groupId>
             <artifactId>docker-maven-plugin</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-            </dependency>
             <dependency>
                 <groupId>info.cukes</groupId>
                 <artifactId>cucumber-java8</artifactId>
@@ -169,12 +160,27 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.3.2</version>
-            </plugin>
         </plugins>
+        <Extensions>
+            <Extension>
+                <GroupId>io.packagecloud.maven.wagon</GroupId>
+                <ArtifactId>maven-packagecloud-wagon</ArtifactId>
+                <Version>0.0.4</Version>
+            </Extension>
+        </Extensions>
     </build>
+    <DistributionManagement>
+        <Repository>
+            <Id>packagecloud-travis</Id>
+            <Url>
+                packagecloud+https://packagecloud.io/capotej/java-test-package
+            </Url>
+        </Repository>
+        <SnapshotRepository>
+            <Id>packagecloud-travis</Id>
+            <Url>
+                packagecloud+https://packagecloud.io/capotej/java-test-package
+            </Url>
+        </SnapshotRepository>
+    </DistributionManagement>
 </project>
