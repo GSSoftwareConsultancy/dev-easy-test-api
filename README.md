@@ -26,7 +26,7 @@ DEV EASY TEST API for Java
   technologies.
   
   
-
+The test framework will support the following  frameworks and platforms
 ## Spring Application
 
 ## Spring Boot Application
