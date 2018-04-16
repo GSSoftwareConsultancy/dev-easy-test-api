@@ -183,18 +183,18 @@
     <distributionManagement>
         <repository>
             <id>deveasy-travis</id>
-            <url>packagecloud+https://deveasy.org/josepharuja/dev-easy-test</url>
+            <url>packagecloud+https://deveasy.org/GSSoftwareConsultancy/dev-easy-test</url>
         </repository>
         <snapshotRepository>
             <id>deveasy-travis</id>
-            <url>packagecloud+https://deveasy.org/josepharuja/dev-easy-test</url>
+            <url>packagecloud+https://deveasy.org/GSSoftwareConsultancy/dev-easy-test</url>
         </snapshotRepository>
     </distributionManagement>
     <repositories>
         <repository>
             <id>deveasy-dev-easy-test</id>
             <url>
-                https://deveasy.org/josepharuja/dev-easy-test/maven2
+                https://deveasy.org/GSSoftwareConsultancy/dev-easy-test/maven2
             </url>
             <releases>
                 <enabled>true</enabled>
