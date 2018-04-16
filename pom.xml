@@ -6,6 +6,17 @@
     <artifactId>dev-easy-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <name>dev-easy-test-api</name>
+    <url>https://github.com/GSSoftwareConsultancy/dev-easy-test-api</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <scm>
+        <connection>scm:git@github.com:GSSoftwareConsultancy/dev-easy-test-api.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/computology/java-test-package.git</developerConnection>
+        <url>https://github.com/GSSoftwareConsultancy/dev-easy-test-api</url>
+    </scm>
     <modules>
         <module>test-core</module>
         <module>test-feature</module>
@@ -172,11 +183,11 @@
     <distributionManagement>
         <repository>
             <id>packagecloud-travis</id>
-            <url>packagecloud+https://packagecloud.io/capotej/java-test-package</url>
+            <url>packagecloud+https://packagecloud.io/GSSoftwareConsultancy/dev-easy-test-api</url>
         </repository>
         <snapshotRepository>
             <id>packagecloud-travis</id>
-            <url>packagecloud+https://packagecloud.io/capotej/java-test-package</url>
+            <url>packagecloud+https://packagecloud.io/GSSoftwareConsultancy/dev-easy-test-api</url>
         </snapshotRepository>
     </distributionManagement>
 
