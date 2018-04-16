@@ -182,19 +182,19 @@
     </build>
     <distributionManagement>
         <repository>
-            <id>packagecloud-travis</id>
-            <url>packagecloud+https://packagecloud.io/GSSoftwareConsultancy/dev-easy-test-api</url>
+            <id>deveasy-travis</id>
+            <url>packagecloud+https://deveasy.org/GSSoftwareConsultancy/dev-easy-test</url>
         </repository>
         <snapshotRepository>
-            <id>packagecloud-travis</id>
-            <url>packagecloud+https://packagecloud.io/GSSoftwareConsultancy/dev-easy-test-api</url>
+            <id>deveasy-travis</id>
+            <url>packagecloud+https://deveasy.org/GSSoftwareConsultancy/dev-easy-test</url>
         </snapshotRepository>
     </distributionManagement>
     <repositories>
         <repository>
-            <id>capotej-java-test-package</id>
+            <id>deveasy-dev-easy-test</id>
             <url>
-                https://packagecloud.io/GSSoftwareConsultancy/dev-easy-test-api/maven2
+                https://deveasy.org/GSSoftwareConsultancy/dev-easy-test/maven2
             </url>
             <releases>
                 <enabled>true</enabled>
