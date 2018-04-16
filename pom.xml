@@ -190,5 +190,19 @@
             <url>packagecloud+https://packagecloud.io/GSSoftwareConsultancy/dev-easy-test-api</url>
         </snapshotRepository>
     </distributionManagement>
+    <repositories>
+        <repository>
+            <id>capotej-java-test-package</id>
+            <url>
+                https://packagecloud.io/GSSoftwareConsultancy/dev-easy-test-api/maven2
+            </url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>
