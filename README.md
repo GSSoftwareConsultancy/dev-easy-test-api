@@ -25,6 +25,8 @@ DEV EASY TEST API for Java
   need some reference implementations to demonstrate the usage of this API in varous applications built using the below
   technologies.
   
+  The test framework will support the following below frameworks and platforms
+  
   
 
 ## Spring Application
