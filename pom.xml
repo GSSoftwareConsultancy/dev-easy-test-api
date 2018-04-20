@@ -10,8 +10,8 @@
     <url>https://github.com/GSSoftwareConsultancy/dev-easy-test-api</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <gherkin.version>5.0.0</gherkin.version>
-        <groovy.version>2.4.12</groovy.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <scm>
@@ -281,8 +281,8 @@
                     <version>3.6.2</version>
                     <configuration>
                         <encoding>UTF-8</encoding>
-                        <source>1.6</source>
-                        <target>1.6</target>
+                        <source>1.8</source>
+                        <target>1.8</target>
                         <compilerArgument>-Werror</compilerArgument>
                     </configuration>
                 </plugin>
