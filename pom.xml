@@ -6,7 +6,17 @@
     <version>0.2.0</version>
     <packaging>pom</packaging>
     <name>dev-easy-test-api</name>
-    <url>https://github.com/GSSoftwareConsultancy/dev-easy-test-api</url>
+    <description>API for making the testing easy</description>
+    <url>http://deveasy.org</url>
+    <developers>
+        <developer>
+            <id>josepharuja</id>
+            <name>Joseph Aruja</name>
+            <email>joseph.a.aruja@gmail.com</email>
+            <organization>Good Shepherd Software Consultancy</organization>
+            <organizationUrl>https://github.com/GSSoftwareConsultancy</organizationUrl>
+        </developer>
+    </developers>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
