@@ -16,3 +16,6 @@ notifications:
     - joseph.a.aruja@gmail.com
     on_success: change
     on_failure: always
+env:
+  global:
+  - secure:F4F0F76EFB04F49D203324968BE97F4B093CE55E
