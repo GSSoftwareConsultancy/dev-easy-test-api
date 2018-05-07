@@ -13,26 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cucumber.steps;
+package org.deveasy.test.feature.steps;
 
-import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import org.deveasy.test.feature.state.ScenarioState;
 
-import java.util.HashMap;
-
 /**
- * Generic Steps for mocking external service dependencies
- * @see com.github.tomakehurst.wiremock.client.WireMock
- *
+ * Steps for managing the Application.
+ * Currently support Spring, Spring Boot and Drop Wizard Applications
  * @author Joseph Aruja GS Software Consultancy Ltd
  */
-public class WireMockSteps {
-
-    private final HashMap<String, WireMockRule>  mockRuleHashMap = new HashMap<>();
-
+public class AwsKinesisSteps {
     private final ScenarioState scenarioState;
 
-    public WireMockSteps(ScenarioState scenarioState) {
+    public AwsKinesisSteps(ScenarioState scenarioState) {
         this.scenarioState = scenarioState;
     }
 

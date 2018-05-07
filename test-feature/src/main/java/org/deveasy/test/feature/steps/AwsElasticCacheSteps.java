@@ -13,19 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cucumber.steps;
-
-import org.deveasy.test.feature.state.ScenarioState;
+package org.deveasy.test.feature.steps;
 
 /**
- * Generic Steps for managing a docker container
- * @see com.spotify.docker.client.DockerClient
+ * Steps for managing the Application.
+ * Currently support Spring, Spring Boot and Drop Wizard Applications
  * @author Joseph Aruja GS Software Consultancy Ltd
  */
-public class DockerClientSteps {
-    private final ScenarioState scenarioState;
-
-    public DockerClientSteps(ScenarioState scenarioState) {
-        this.scenarioState = scenarioState;
-    }
+public class AwsElasticCacheSteps {
 }

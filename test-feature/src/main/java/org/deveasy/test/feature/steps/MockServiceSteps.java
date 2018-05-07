@@ -13,20 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cucumber.steps;
+package org.deveasy.test.feature.steps;
 
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import org.deveasy.test.feature.state.ScenarioState;
 
+import java.util.HashMap;
+
 /**
- * Steps for managing the database records
+ * Generic Steps for mocking external service dependencies
+ * @see com.github.tomakehurst.wiremock.client.WireMock
  *
  * @author Joseph Aruja GS Software Consultancy Ltd
  */
-public class DatabaseSteps {
+public class MockServiceSteps {
+
+    private final HashMap<String, WireMockRule>  mockRuleHashMap = new HashMap<>();
 
     private final ScenarioState scenarioState;
 
-    public DatabaseSteps(ScenarioState scenarioState) {
+    public MockServiceSteps(ScenarioState scenarioState) {
         this.scenarioState = scenarioState;
     }
+
 }

@@ -13,12 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cucumber.steps;
+package org.deveasy.test.feature.steps;
+
+import org.deveasy.test.feature.state.ScenarioState;
 
 /**
- * Steps for managing the Application.
- * Currently support Spring, Spring Boot and Drop Wizard Applications
+ * Steps for managing 
+ * 
  * @author Joseph Aruja GS Software Consultancy Ltd
  */
-public class AwsElasticCacheSteps {
+public class AwsDynamoDBSteps {
+
+    private final ScenarioState scenarioState;
+
+    public AwsDynamoDBSteps(ScenarioState scenarioState) {
+        this.scenarioState = scenarioState;
+    }
+
 }

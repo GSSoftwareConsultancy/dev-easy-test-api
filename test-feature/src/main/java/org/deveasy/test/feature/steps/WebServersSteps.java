@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cucumber.steps;
+package org.deveasy.test.feature.steps;
 
 import org.deveasy.test.feature.state.ScenarioState;
 
 /**
  * Generic Steps for managing web servers
- * @see com.github.tomakehurst.wiremock.client.WireMock
  */
 public class WebServersSteps {
 

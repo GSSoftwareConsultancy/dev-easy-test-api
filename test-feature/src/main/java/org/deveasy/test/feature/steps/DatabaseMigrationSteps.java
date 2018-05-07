@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cucumber.steps;
+package org.deveasy.test.feature.steps;
 
 import cucumber.api.java.en.Given;
 import org.deveasy.test.feature.state.ScenarioState;

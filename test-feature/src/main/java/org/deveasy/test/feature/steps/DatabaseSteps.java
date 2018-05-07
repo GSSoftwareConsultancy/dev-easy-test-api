@@ -13,21 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cucumber.steps;
+package org.deveasy.test.feature.steps;
 
 import org.deveasy.test.feature.state.ScenarioState;
 
 /**
- * Steps for managing 
- * 
+ * Steps for managing the database records
+ *
  * @author Joseph Aruja GS Software Consultancy Ltd
  */
-public class AwsDynamoDBSteps {
+public class DatabaseSteps {
 
     private final ScenarioState scenarioState;
 
-    public AwsDynamoDBSteps(ScenarioState scenarioState) {
+    public DatabaseSteps(ScenarioState scenarioState) {
         this.scenarioState = scenarioState;
     }
-
 }
