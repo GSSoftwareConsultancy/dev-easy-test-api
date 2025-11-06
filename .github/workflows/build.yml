@@ -45,3 +45,11 @@ jobs:
           path: |
             **/target/surefire-reports/*
             **/target/failsafe-reports/*
+
+      - name: Upload coverage (JaCoCo HTML)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-jacoco
+          path: |
+            **/target/site/jacoco/**

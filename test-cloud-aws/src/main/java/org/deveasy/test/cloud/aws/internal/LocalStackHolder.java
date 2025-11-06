@@ -30,10 +30,18 @@ public final class LocalStackHolder {
         // Let Testcontainers manage lifecycle (stop on JVM shutdown)
         container.start();
         if (!REF.compareAndSet(null, container)) {
-            // Another thread won the race; stop ours and return the existing
+            // Another thread won the race; stop ours and wait for the winner
             container.stop();
+            LocalStackContainer winner;
+            int spins = 0;
+            do {
+                winner = REF.get();
+                if (winner != null) return winner;
+                try { Thread.sleep(10); } catch (InterruptedException ignored) {}
+            } while (++spins < 50);
+            throw new IllegalStateException("LocalStack container race: winner not visible");
         }
-        return REF.get();
+        return container;
     }
 
     public static LocalStackContainer get() {
