@@ -1,10 +1,14 @@
 # Dev Easy Test API for Java
 
+[![Build](https://github.com/GSSoftwareConsultancy/dev-easy-test-api/actions/workflows/build.yml/badge.svg)](https://github.com/GSSoftwareConsultancy/dev-easy-test-api/actions/workflows/build.yml)
+![Java](https://img.shields.io/badge/Java-17-blue)
+![License](https://img.shields.io/badge/License-Apache_2.0-green)
+
 A community-driven toolkit to make testing Java applications easier and more consistent across frameworks.
 
 This project aims to reduce boilerplate and provide a unified, framework-agnostic approach for writing integration and end-to-end tests, with first-class support for BDD using Cucumber.
 
-Status: Early-stage. We are preparing a modernization/upgrade and inviting contributors to help shape the roadmap.
+Status: Early-stage. GitHub Actions is our only CI. We follow trunk-based development with small, frequent commits that keep main green.
 
 
 ## Why this project?
