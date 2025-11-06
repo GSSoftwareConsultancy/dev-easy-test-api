@@ -47,10 +47,10 @@ Build the whole project:
 mvn -q -DskipTests clean install
 ```
 
-Run tests (no provider capabilities yet):
+Run the full test suite (includes emulator-backed integration tests):
 
 ```bash
-mvn -q -DskipTests=false test
+mvn -q -DskipTests=false verify
 ```
 
 Select a cloud provider and mode in Cucumber (example):
@@ -64,6 +64,19 @@ And cloud region is "eu-west-1"
 How provider adapters are discovered:
 - Adapters implement `org.deveasy.test.core.cloud.spi.CloudAdapter` and are discovered via Java `ServiceLoader`.
 - If `test-cloud-aws` is on the classpath, the AWS adapter will be picked up automatically.
+
+### Run the AWS S3 example (first working slice)
+- Ensure Docker is running
+- Then run only the AWS module tests (fast path):
+
+```bash
+mvn -q -DskipTests=false -pl test-cloud-aws -am verify
+```
+
+What you should see:
+- Testcontainers pulls and starts `localstack/localstack`
+- S3 integration test creates a unique bucket, uploads JSON, reads it back, and lists keys
+- Build ends with `BUILD SUCCESS`
 
 If Docker is not running or no adapter is present, steps will fail gracefully with a helpful message.
 

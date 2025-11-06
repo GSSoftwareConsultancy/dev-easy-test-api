@@ -6,7 +6,6 @@ package org.deveasy.test.cloud.aws;
 import org.deveasy.test.core.cloud.capability.BlobStorage;
 import org.deveasy.test.core.cloud.TestCloudConfig;
 import org.deveasy.test.core.cloud.CloudMode;
-import org.deveasy.test.core.ResourceHelper;
 import org.deveasy.test.cloud.aws.internal.AwsClients;
 import org.deveasy.test.cloud.aws.internal.LocalStackHolder;
 import software.amazon.awssdk.core.ResponseBytes;
@@ -40,14 +39,25 @@ public final class AwsBlobStorage implements BlobStorage {
         try {
             HeadBucketRequest head = HeadBucketRequest.builder().bucket(name).build();
             s3.headBucket(head);
+            return;
         } catch (S3Exception e) {
-            if (e.statusCode() == 404) {
-                CreateBucketRequest req = CreateBucketRequest.builder().bucket(name).build();
-                s3.createBucket(req);
-            } else {
+            if (e.statusCode() != 404) {
                 throw e;
             }
         }
+        String region = cfg.regionOrLocation();
+        if (region == null || region.isBlank()) {
+            region = "us-east-1";
+        }
+        CreateBucketRequest.Builder builder = CreateBucketRequest.builder().bucket(name);
+        if (!"us-east-1".equals(region)) {
+            builder.createBucketConfiguration(
+                CreateBucketConfiguration.builder()
+                    .locationConstraint(BucketLocationConstraint.fromValue(region))
+                    .build()
+            );
+        }
+        s3.createBucket(builder.build());
     }
 
     @Override
