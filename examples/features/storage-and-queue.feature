@@ -14,8 +14,8 @@ Feature: Storage and Queue smoke with provider-neutral steps
     When I put object from file "examples/payloads/sample.json" as key "k1"
     Then I can get object with key "k1" containing JSON matching "{\"hello\":\"world\"}"
 
-  @queue @pending
-  Scenario: Send and receive a simple message (pending until SQS implemented)
+  @queue
+  Scenario: Send and receive a simple message
     Given a queue named "dev-easy-test-orders"
     When I send a message "{\"orderId\":123}"
     Then within 5s I receive a message matching "orderId=123"

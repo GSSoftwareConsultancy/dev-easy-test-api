@@ -12,6 +12,7 @@ import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.sqs.SqsClient;
 
 import java.net.URI;
 
@@ -37,6 +38,28 @@ public final class AwsClients {
             // LIVE mode: use default provider chain; optional region from config
             Region region = Region.of(defaultRegion(cfg));
             return S3Client.builder()
+                .region(region)
+                .credentialsProvider(DefaultCredentialsProvider.create())
+                .build();
+        }
+    }
+
+    public static SqsClient sqs(TestCloudConfig cfg) {
+        if (cfg.mode() == CloudMode.EMULATOR) {
+            LocalStackContainer ls = LocalStackHolder.ensureStartedS3(); // same holder starts SQS
+            Region region = Region.of(defaultRegion(cfg));
+            URI endpoint = ls.getEndpointOverride(LocalStackContainer.Service.SQS);
+            AwsCredentialsProvider creds = StaticCredentialsProvider.create(
+                AwsBasicCredentials.create(ls.getAccessKey(), ls.getSecretKey())
+            );
+            return SqsClient.builder()
+                .endpointOverride(endpoint)
+                .region(region)
+                .credentialsProvider(creds)
+                .build();
+        } else {
+            Region region = Region.of(defaultRegion(cfg));
+            return SqsClient.builder()
                 .region(region)
                 .credentialsProvider(DefaultCredentialsProvider.create())
                 .build();

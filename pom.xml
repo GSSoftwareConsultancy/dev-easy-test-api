@@ -49,10 +49,21 @@
      -->
     <pluginRepositories>
         <pluginRepository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
+        <pluginRepository>
             <id>sonatype.org</id>
             <url>https://oss.sonatype.org/content/repositories/releases</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
 
     <distributionManagement>
         <snapshotRepository>

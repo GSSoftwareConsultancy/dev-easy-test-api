@@ -37,7 +37,8 @@ public final class AwsCloudAdapter implements CloudAdapter {
 
     @Override
     public Queue queue() {
-        return null; // not implemented yet
+        ensureInitialized();
+        return new AwsQueue(config);
     }
 
     @Override
