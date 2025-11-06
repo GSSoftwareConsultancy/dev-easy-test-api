@@ -18,9 +18,19 @@ package org.deveasy.test.feature.state;
 import java.util.HashMap;
 
 /**
- *
+ * Scenario-wide state bag for step glue. Now also carries CloudContext.
  */
 public class ScenarioState {
 
     public HashMap<String, Object> keyValuePairs = new HashMap<>();
+
+    private CloudContext cloudContext = new CloudContext();
+
+    public CloudContext getCloudContext() {
+        return cloudContext;
+    }
+
+    public void setCloudContext(CloudContext cloudContext) {
+        this.cloudContext = cloudContext;
+    }
 }

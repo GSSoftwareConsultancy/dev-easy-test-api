@@ -1,40 +1,136 @@
-DEV EASY TEST API for Java
-==========================================================
+# Dev Easy Test API for Java
 
-# Introduction
-  The question is how effectively and efficiently we can test our applications we develop?.
-  We have various application frameworks[[Spring], [DropWizard], [Google Guice] - ones that have more  usage in the
-  the Java developer community] and it is becoming really difficult when it comes to testing as each framework give 
-  preference to their own way of testing and it makes life much harder for the developer community. 
-  The more options and more possibilities we have , we have more ways of testing the same thing and that means that 
-  there is no standardisation on how we do an integration test.
-  
-  Even frameworks reference implementations don't give enough reference on how to effectively test an application. 
-  Popularity of [BDD] and [Cucumber]  have brought the developers, Business analysts and automation testers a bit 
-  more closer. But still there is only a small percentage of people effectively using cucumber. 
-  
-  I have found over the years is that people need to write boiler plate testing code again and again and it gets even 
-  duplicated with in the same projects if automation tester is not part of the development team.
-  
-  Like Java have evolved over the years  coming up with the generic interfaces[for eg [JPA]  can hide 
-  frameworks like [Hibernate] and [MyBatis] . So as frameworks like [Spring] and [DropWizard /Google Guice]  helping us
-  to configure and use any preferred implementation of a specific API. They also save us writing lot of Boiler plate 
-  code for all the APIs we are using for application.
-  But when we analyse the testing ecosystem, we have a number of API's doing a specific thing and we need a framework
-  in testing area that can provide a generic way of testing java applications built using various frameworks. We also 
-  need some reference implementations to demonstrate the usage of this API in varous applications built using the below
-  technologies.
-  
-  The test framework will support the following below frameworks and platforms
-  
-  
-The test framework will support the following  frameworks and platforms
-## Spring Application
+A community-driven toolkit to make testing Java applications easier and more consistent across frameworks.
 
-## Spring Boot Application
+This project aims to reduce boilerplate and provide a unified, framework-agnostic approach for writing integration and end-to-end tests, with first-class support for BDD using Cucumber.
 
-## Drop Wizard Application
+Status: Early-stage. We are preparing a modernization/upgrade and inviting contributors to help shape the roadmap.
 
-## Guice Application
 
-## Amazon Web Serives
+## Why this project?
+Modern Java teams build services with a wide range of frameworks (Spring, Spring Boot, Dropwizard, Guice, etc.). Each ecosystem offers different guidance and utilities for testing. That diversity is great, but developers often:
+- Re-implement the same test utilities and fixtures across projects.
+- Struggle to find a consistent way to do integration testing.
+- Spend time wiring test infrastructure (databases, migrations, HTTP clients, mock servers, containers) instead of focusing on business logic.
+
+Dev Easy Test brings a curated set of helpers, step definitions, and patterns that can be shared across projects, helping teams standardize testing without being locked into a single framework.
+
+
+## Modules
+This is a Maven multi-module project:
+- test-core: Core utilities shared by features and step libraries.
+- test-feature: Cucumber/BDD-oriented steps and state helpers for common concerns (HTTP, JWT, DB, mock services, AWS stubs, etc.).
+
+
+## Supported/Targeted Technologies
+Planned and/or partially implemented support for:
+- Application frameworks: Spring, Spring Boot, Dropwizard, Guice
+- Data and migrations: MySQL (embedded), Flyway
+- HTTP testing: Apache HttpClient, WireMock
+- BDD: Cucumber (to be modernized to io.cucumber)
+- Cloud/platform helpers: AWS service stubs (S3, SQS, SNS, SES, Lambda, DynamoDB, Kinesis, ElastiCache)
+
+
+## Quick Start (Build and Test)
+Requirements:
+- Java 17 (LTS)
+- Maven 3.8+ (3.9+ recommended)
+- Docker running locally (for emulator-backed tests via Testcontainers)
+
+Build the whole project:
+
+```bash
+mvn -q -DskipTests clean install
+```
+
+Run tests (no provider capabilities yet):
+
+```bash
+mvn -q -DskipTests=false test
+```
+
+Select a cloud provider and mode in Cucumber (example):
+
+```gherkin
+Given cloud provider is "aws"
+And cloud mode is "emulator"
+And cloud region is "eu-west-1"
+```
+
+How provider adapters are discovered:
+- Adapters implement `org.deveasy.test.core.cloud.spi.CloudAdapter` and are discovered via Java `ServiceLoader`.
+- If `test-cloud-aws` is on the classpath, the AWS adapter will be picked up automatically.
+
+If Docker is not running or no adapter is present, steps will fail gracefully with a helpful message.
+
+
+## Troubleshooting (Known Issues in Current Version)
+This repo uses older dependencies and group IDs that may no longer resolve from Maven Central, for example:
+- info.cukes (Cucumber 1.x) artifacts
+- com.wix:wix-embedded-mysql:1.0.1
+- com.spotify:docker-maven-plugin:1.0.0
+- Older Flyway and plugin versions
+
+Until the upgrade is completed, builds may fail to resolve some of the above. If you’re trying to experiment right now, you can:
+- Build with offline-friendly mirrors or your company’s artifact proxy if it contains the legacy artifacts.
+- Comment out failing dependencies temporarily while exploring code.
+
+Better yet—help us modernize (see Roadmap and Contributing)!
+
+
+## Roadmap (Help Wanted)
+We want to bring this project up to date and make it welcoming for contributors. Proposed steps:
+1) Modernize build and dependencies
+   - Move from info.cukes to io.cucumber (Cucumber 7/8+)
+   - Move to JUnit 5 (JUnit Jupiter)
+   - Update Flyway, WireMock, HttpClient, Guava, Jackson to current stable versions
+   - Adopt Java 17 LTS as baseline (toolchains for Java 8 if necessary)
+   - Replace deprecated plugins (e.g., com.spotify:docker-maven-plugin) with maintained alternatives (e.g., jib, or testcontainers for integration testing)
+2) Improve developer experience
+   - Standard test fixtures (DB, migrations, mock servers)
+   - Consistent package naming and API polish
+   - Richer examples and documentation
+3) CI/CD
+   - Add GitHub Actions for build and test on pull requests
+   - Add code style and static analysis (Spotless/Checkstyle, ErrorProne, etc.)
+4) Releases
+   - Set up automated releases to Maven Central (via OSSRH) with signed artifacts
+
+If you agree with this direction or want changes, please open a discussion or issue.
+
+
+## Contributing
+We welcome contributions! Here’s how to get started:
+1) Fork the repo and create a feature branch from main.
+2) If proposing large changes (e.g., moving to io.cucumber), please open a design issue first to align on the approach.
+3) Follow conventional commit messages where possible (e.g., feat:, fix:, docs:, chore:).
+4) Write tests for new functionality or behavior changes.
+5) Ensure `mvn -q -DskipTests clean install` and `mvn test` succeed locally.
+6) Open a Pull Request with a clear description and checklist of changes.
+
+We will add a CODE_OF_CONDUCT and CONTRIBUTING guide as part of the modernization. For now, please keep discussions respectful and constructive.
+
+
+## Using the Features (high-level)
+The `test-feature` module includes Cucumber step definitions and scenario state helpers for common tasks such as:
+- Starting/stopping application under test
+- Interacting with HTTP endpoints
+- Working with JSON Web Tokens
+- Managing databases and migrations
+- Mocking external services (e.g., via WireMock)
+- Interacting with AWS-like services (using local stubs or emulators)
+
+Once dependencies are modernized (io.cucumber + JUnit 5), we will publish concrete examples and ready-to-use templates in the repository.
+
+
+## License
+Apache License 2.0. See LICENSE file for details.
+
+
+## Acknowledgements
+- Inspired by years of testing across diverse Java stacks
+- Thanks to the Cucumber, WireMock, Flyway, and wider Java OSS communities
+
+
+---
+Last updated: 2025-11-05

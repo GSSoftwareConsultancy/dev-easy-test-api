@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.deveasy</groupId>
+        <artifactId>dev-easy-test</artifactId>
+        <version>0.2.0</version>
+    </parent>
+    <artifactId>test-cloud-aws</artifactId>
+    <name>dev easy test cloud - aws</name>
+    <description>AWS cloud adapter for dev-easy-test (S3 minimal)</description>
+
+    <properties>
+        <aws.sdk.v2.version>2.25.64</aws.sdk.v2.version>
+        <testcontainers.version>1.20.1</testcontainers.version>
+        <junit.jupiter.version>5.10.2</junit.jupiter.version>
+    </properties>
+
+    <dependencies>
+        <!-- Core API dependency -->
+        <dependency>
+            <groupId>org.deveasy</groupId>
+            <artifactId>test-core</artifactId>
+            <version>0.2.0</version>
+        </dependency>
+
+        <!-- AWS SDK v2: S3 -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>s3</artifactId>
+            <version>${aws.sdk.v2.version}</version>
+        </dependency>
+
+        <!-- Testcontainers for LocalStack (emulator) -->
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers</artifactId>
+            <version>${testcontainers.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>localstack</artifactId>
+            <version>${testcontainers.version}</version>
+        </dependency>
+
+        <!-- Test dependencies for module-local tests (optional) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

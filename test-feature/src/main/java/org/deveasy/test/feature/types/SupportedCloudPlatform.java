@@ -18,6 +18,6 @@ package org.deveasy.test.feature.types;
 /**
  *
  */
-public enum SupportCloudPlatform {
-    AWS, AZURE, GOOGLE;
+public enum SupportedCloudPlatform {
+    AWS, AZURE, GCP;
 }

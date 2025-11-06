@@ -1,0 +1,42 @@
+/*
+ * LocalStack holder for AWS emulator (S3 for now).
+ */
+package org.deveasy.test.cloud.aws.internal;
+
+import org.testcontainers.containers.localstack.LocalStackContainer;
+import org.testcontainers.utility.DockerImageName;
+
+import java.util.concurrent.atomic.AtomicReference;
+
+/**
+ * Lazily starts a LocalStack container with S3 service only.
+ * This class is intentionally simple and uses a static holder pattern.
+ */
+public final class LocalStackHolder {
+
+    private static final DockerImageName LOCALSTACK_IMAGE = DockerImageName.parse("localstack/localstack:2.3");
+
+    private static final AtomicReference<LocalStackContainer> REF = new AtomicReference<>();
+
+    private LocalStackHolder() {}
+
+    public static LocalStackContainer ensureStartedS3() {
+        LocalStackContainer existing = REF.get();
+        if (existing != null) {
+            return existing;
+        }
+        LocalStackContainer container = new LocalStackContainer(LOCALSTACK_IMAGE)
+            .withServices(LocalStackContainer.Service.S3);
+        // Let Testcontainers manage lifecycle (stop on JVM shutdown)
+        container.start();
+        if (!REF.compareAndSet(null, container)) {
+            // Another thread won the race; stop ours and return the existing
+            container.stop();
+        }
+        return REF.get();
+    }
+
+    public static LocalStackContainer get() {
+        return REF.get();
+    }
+}

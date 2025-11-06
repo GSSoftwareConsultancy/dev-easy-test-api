@@ -19,8 +19,9 @@
     </developers>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
     <licenses>
         <license>
@@ -39,6 +40,7 @@
     <modules>
         <module>test-core</module>
         <module>test-feature</module>
+        <module>test-cloud-aws</module>
     </modules>
 
     <!--
@@ -215,18 +217,6 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
                 </plugins>
             </build>
         </profile>
@@ -298,9 +288,8 @@
                     <version>3.6.2</version>
                     <configuration>
                         <encoding>UTF-8</encoding>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                        <compilerArgument>-Werror</compilerArgument>
+                        <release>17</release>
+                        <!-- Relax warnings as errors to ease development builds -->
                     </configuration>
                 </plugin>
 

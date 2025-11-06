@@ -21,6 +21,8 @@ package org.deveasy.test.feature.types;
 public enum SupportedApplicationFramework {
     SPRING,
     SPRING_BOOT,
+    QUARKUS,
+    MICRONAUT,
     DROPWIZARD,
     GOOGLE_GUICE
 }

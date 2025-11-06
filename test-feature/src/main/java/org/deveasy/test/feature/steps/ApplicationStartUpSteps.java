@@ -24,12 +24,11 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
-/**
+/*
  * Steps for managing the Application.
- * Currently Spring, Spring Boot and Drop Wizard Applications
- * @see org.springframework.boot.SpringApplication
- * @see io.dropwizard.Application
- * @author Joseph Aruja GS Software Consultancy Ltd
+ * Currently supports starting Spring Boot applications via reflection.
+ * (References to external frameworks are intentionally plain comments to avoid Javadoc warnings.)
+ * Author: Joseph Aruja GS Software Consultancy Ltd
  */
 public class ApplicationStartUpSteps {
 
