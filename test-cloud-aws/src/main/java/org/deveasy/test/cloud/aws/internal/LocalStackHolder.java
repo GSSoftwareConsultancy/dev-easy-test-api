@@ -26,7 +26,7 @@ public final class LocalStackHolder {
             return existing;
         }
         LocalStackContainer container = new LocalStackContainer(LOCALSTACK_IMAGE)
-            .withServices(LocalStackContainer.Service.S3);
+            .withServices(LocalStackContainer.Service.S3, LocalStackContainer.Service.SQS);
         // Let Testcontainers manage lifecycle (stop on JVM shutdown)
         container.start();
         if (!REF.compareAndSet(null, container)) {

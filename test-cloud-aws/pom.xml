@@ -30,6 +30,13 @@
             <version>${aws.sdk.v2.version}</version>
         </dependency>
 
+        <!-- AWS SDK v2: SQS -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>sqs</artifactId>
+            <version>${aws.sdk.v2.version}</version>
+        </dependency>
+
         <!-- Testcontainers for LocalStack (emulator) -->
         <dependency>
             <groupId>org.testcontainers</groupId>
