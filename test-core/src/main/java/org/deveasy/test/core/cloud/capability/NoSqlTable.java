@@ -8,32 +8,47 @@ import org.deveasy.test.core.cloud.Capability;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 /**
- * Simplified NoSQL Table capability (e.g., DynamoDB, Azure Table, Datastore/Firestore in Datastore mode).
- * The API focuses on the common testing subset to keep provider neutrality.
+ * Provider-agnostic NoSQL table capability (e.g., DynamoDB, Cosmos DB, Firestore/Datastore).
+ * The API intentionally focuses on a minimal set of operations commonly needed in tests.
+ * Implementations should be idempotent where it makes sense and safe for parallel tests.
  */
 public interface NoSqlTable extends Capability {
 
-    /** Ensure a table exists with a primary key (hash) and optional sort key. */
-    void ensureTable(String tableName, String hashKey, String sortKey);
+    // Table management
+
+    /** Ensure a table exists with the given partition (hash) key. Idempotent. */
+    void ensureTable(String tableName, String partitionKey);
+
+    /** Ensure a table exists with the given partition (hash) and sort (range) key. Idempotent. */
+    void ensureTable(String tableName, String partitionKey, String sortKey);
 
     /** Delete a table if present. */
     void deleteTable(String tableName);
 
-    /** Put or overwrite an item. */
+    // Item operations
+
+    /** Put or overwrite an item (schema-less map). */
     void putItem(String tableName, Map<String, Object> item);
 
-    /** Get an item by primary key; returns empty if not found. */
-    Optional<Map<String, Object>> getItem(String tableName, Map<String, Object> key);
+    /** Get an item by partition key value; returns null if not found. */
+    Map<String, Object> getItem(String tableName, String partitionKeyValue);
 
-    /** Delete an item by primary key; no-op if not exists. */
-    void deleteItem(String tableName, Map<String, Object> key);
+    /** Get an item by partition and sort key values; returns null if not found. */
+    Map<String, Object> getItem(String tableName, String partitionKeyValue, String sortKeyValue);
 
-    /**
-     * Very simple query by equality on a single attribute; returns up to limit items.
-     * Returning order is undefined and provider-specific.
-     */
-    List<Map<String, Object>> queryEquals(String tableName, String attribute, Object value, int limit);
+    /** Delete an item by partition key value; no-op if not exists. */
+    void deleteItem(String tableName, String partitionKeyValue);
+
+    /** Delete an item by partition and sort key values; no-op if not exists. */
+    void deleteItem(String tableName, String partitionKeyValue, String sortKeyValue);
+
+    // Query/scan
+
+    /** Scan all items in a table. Returning order is undefined. */
+    List<Map<String, Object>> scan(String tableName);
+
+    /** Query by partition key value. Returning order is undefined. */
+    List<Map<String, Object>> query(String tableName, String partitionKeyValue);
 }

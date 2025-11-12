@@ -43,12 +43,14 @@ public final class AwsCloudAdapter implements CloudAdapter {
 
     @Override
     public PubSub pubSub() {
-        return null; // not implemented yet
+        ensureInitialized();
+        return new AwsPubSub(config);
     }
 
     @Override
     public NoSqlTable noSqlTable() {
-        return null; // not implemented yet
+        ensureInitialized();
+        return new AwsDynamoDB(config);
     }
 
     private void ensureInitialized() {

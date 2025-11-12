@@ -9,7 +9,7 @@ import org.testcontainers.utility.DockerImageName;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Lazily starts a LocalStack container with S3 service only.
+ * Lazily starts a LocalStack container with S3, SQS, SNS, and DYNAMODB services.
  * This class is intentionally simple and uses a static holder pattern.
  */
 public final class LocalStackHolder {
@@ -26,7 +26,12 @@ public final class LocalStackHolder {
             return existing;
         }
         LocalStackContainer container = new LocalStackContainer(LOCALSTACK_IMAGE)
-            .withServices(LocalStackContainer.Service.S3, LocalStackContainer.Service.SQS);
+            .withServices(
+                LocalStackContainer.Service.S3,
+                LocalStackContainer.Service.SQS,
+                LocalStackContainer.Service.SNS,
+                LocalStackContainer.Service.DYNAMODB
+            );
         // Let Testcontainers manage lifecycle (stop on JVM shutdown)
         container.start();
         if (!REF.compareAndSet(null, container)) {
@@ -42,6 +47,22 @@ public final class LocalStackHolder {
             throw new IllegalStateException("LocalStack container race: winner not visible");
         }
         return container;
+    }
+
+    public static LocalStackContainer ensureStartedSns() {
+        // SNS runs in the same LocalStack container; ensure it's started
+        return ensureStartedS3();
+    }
+
+    // Alias with canonical acronym casing for strict TDD expectations
+    public static LocalStackContainer ensureStartedSNS() {
+        // SNS shares the same container, no additional startup needed
+        return ensureStartedS3();
+    }
+
+    public static LocalStackContainer ensureStartedDynamoDB() {
+        // DynamoDB runs in the same LocalStack container; ensure it's started
+        return ensureStartedS3();
     }
 
     public static LocalStackContainer get() {

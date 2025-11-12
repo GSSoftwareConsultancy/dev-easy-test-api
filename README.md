@@ -20,11 +20,45 @@ Modern Java teams build services with a wide range of frameworks (Spring, Spring
 Dev Easy Test brings a curated set of helpers, step definitions, and patterns that can be shared across projects, helping teams standardize testing without being locked into a single framework.
 
 
-## Modules
+## Project structure (modules)
 This is a Maven multi-module project:
-- test-core: Core utilities shared by features and step libraries.
-- test-feature: Cucumber/BDD-oriented steps and state helpers for common concerns (HTTP, JWT, DB, mock services, AWS stubs, etc.).
+- test-core: Core cloud capability APIs (provider‑agnostic), configuration (`TestCloudConfig`), and SPI (`CloudAdapter`).
+- test-feature: Provider‑neutral Cucumber glue + JUnit Platform suites (cloud selection, Storage, Queue). Runs features under `src/test/resources/features`.
+- test-cloud-aws: AWS adapter (SDK v2 + Testcontainers/LocalStack). Minimal capabilities working: S3 (`BlobStorage`) and SQS (`Queue`).
 
+Key directories:
+- `test-core/src/main/java/org/deveasy/test/core/cloud/**` — core Cloud API, config, capabilities
+- `test-feature/src/test/java/org/deveasy/test/feature/cloud/**` — Cucumber glue, suites, scenario state
+- `test-feature/src/test/resources/features/**` — provider‑neutral features (storage/queue)
+- `test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/**` — AWS adapter implementations and client wiring
+- `.github/workflows/*` — CI pipelines (build + quality-gates)
+
+## Architecture overview
+- Core (provider‑agnostic)
+  - Small capability interfaces: `BlobStorage`, `Queue` (more coming: `PubSub`, `NoSqlTable`, `SecretStore`, `KmsLike`).
+  - Unified runtime config via `TestCloudConfig` (provider, mode, region/project, overrides).
+  - SPI discovery with `ServiceLoader` for `CloudAdapter` implementations.
+- Feature layer (BDD)
+  - Provider‑neutral steps to select `provider/mode/region` and to operate Storage/Queue.
+  - JUnit Platform Cucumber engine runs features from `test-feature`.
+- Provider adapters (vendor SDKs isolated)
+  - `test-cloud-aws`: AWS SDK v2 + LocalStack/Testcontainers. Implements S3 + SQS minimal flows today.
+  - Future: `test-cloud-azure` (Azurite/Cosmos Emulator), `test-cloud-gcp` (official emulators).
+- CI & Quality
+  - Two workflows: `build.yml` (tests + coverage) and `quality-gates.yml` (lint, enforcer, errorprone-soft, OWASP).
+  - Emulator‑first strategy; live‑cloud runs will be opt‑in later.
+
+## Modules
+- test-core — core APIs and SPI, no vendor deps
+- test-feature — provider‑neutral Cucumber glue/suites
+- test-cloud-aws — AWS adapter (S3 + SQS minimal working; more services planned)
+
+## Project status (summary)
+- Baseline: Java 17; multi‑module Maven build is green locally and in GitHub Actions (Docker/Testcontainers required).
+- Capabilities: AWS S3 (`BlobStorage`) and SQS (`Queue`) minimal implementations are working and verified via JUnit ITs and provider‑neutral Cucumber glue.
+- CI: split into two workflows — `build.yml` (tests + coverage) and `quality-gates.yml` (lint, enforcer, errorprone-soft, OWASP). Artifacts uploaded: test reports and JaCoCo HTML; OWASP reports in quality gates.
+- Quality gates: Spotless + Checkstyle + Enforcer wired; coverage (JaCoCo) report‑only; OWASP enabled (report‑only). Error Prone soft profile/job queued.
+- Roadmap (next): v0.4 will add Pub/Sub + NoSQL (AWS SNS+DynamoDB; GCP Pub/Sub+Firestore) with emulator‑first approach; Azure baseline (Azurite/Cosmos Emulator) follows.
 
 ## Supported/Targeted Technologies
 Planned and/or partially implemented support for:
@@ -79,6 +113,20 @@ What you should see:
 - Build ends with `BUILD SUCCESS`
 
 If Docker is not running or no adapter is present, steps will fail gracefully with a helpful message.
+
+### Run provider-neutral Cucumber examples (S3 + SQS)
+- Ensure Docker is running
+- Run the feature module tests (this executes Cucumber features under `test-feature/src/test/resources/features`):
+
+```bash
+mvn -q -DskipTests=false -pl test-feature -am test
+```
+
+What you should see:
+- LocalStack starts via Testcontainers
+- Storage feature: creates a bucket and stores/reads a JSON object
+- Queue feature: ensures a queue, sends a message and receives it within the timeout
+- Build ends with `BUILD SUCCESS`
 
 
 ## Troubleshooting (Known Issues in Current Version)
@@ -151,3 +199,21 @@ Apache License 2.0. See LICENSE file for details.
 
 ---
 Last updated: 2025-11-05
+
+
+## CI (GitHub Actions)
+We use two workflows for faster feedback and clear separation:
+- build.yml
+  - tests: full test suite (includes LocalStack/Testcontainers integration tests)
+  - coverage: uploads JaCoCo HTML (module + aggregate) as artifacts
+- quality-gates.yml
+  - lint: Spotless + Checkstyle (no tests)
+  - static: Maven Enforcer (build hygiene)
+  - errorprone: soft/WARN profile (advisory; targeted ERROR checks enabled when the plugin is available)
+  - deps: OWASP Dependency-Check (report-only)
+
+Artifacts available on each run:
+- test-reports: surefire/failsafe reports
+- coverage-jacoco: HTML coverage under `**/target/site/jacoco/**` and `**/target/site/jacoco-aggregate/**`
+
+We follow trunk-based development: keep main green; prefer small, frequent commits.

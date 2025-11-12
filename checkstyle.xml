@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!-- Pragmatic Checkstyle ruleset: start small, fail on critical only.
+     We can harden incrementally as the codebase modernizes. -->
+<module name="Checker">
+    <property name="severity" value="error"/>
+
+    <!-- Limit scope to Java files -->
+    <module name="FileExtensions">
+        <property name="fileExtensions" value="java"/>
+    </module>
+
+    <module name="TreeWalker">
+        <!-- Imports hygiene -->
+        <module name="UnusedImports"/>
+        <module name="RedundantImport"/>
+        <module name="AvoidStarImport"/>
+
+        <!-- Keep initial rules minimal; add more later (e.g., MethodLength, CyclomaticComplexity) -->
+    </module>
+</module>

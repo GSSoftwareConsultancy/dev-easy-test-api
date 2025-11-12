@@ -17,6 +17,7 @@ import software.amazon.awssdk.services.sqs.model.ReceiveMessageRequest;
 import software.amazon.awssdk.services.sqs.model.ReceiveMessageResponse;
 import software.amazon.awssdk.services.sqs.model.SendMessageRequest;
 import software.amazon.awssdk.services.sqs.model.Message;
+import software.amazon.awssdk.services.sqs.model.SqsException;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -40,7 +41,9 @@ public final class AwsQueue implements Queue {
     public void ensureQueue(String name) {
         try {
             getQueueUrl(name);
-        } catch (QueueDoesNotExistException e) {
+        } catch (SqsException e) {
+            // LocalStack may return HTTP 500 for missing queue on GetQueueUrl; treat as not-exist and create
+            // QueueDoesNotExistException is a subclass of SqsException, so this covers both cases
             sqs.createQueue(CreateQueueRequest.builder().queueName(name).build());
         }
     }

@@ -13,6 +13,8 @@ import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.sqs.SqsClient;
+import software.amazon.awssdk.services.sns.SnsClient;
+import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 
 import java.net.URI;
 
@@ -69,5 +71,49 @@ public final class AwsClients {
     private static String defaultRegion(TestCloudConfig cfg) {
         String r = cfg.regionOrLocation();
         return (r == null || r.isBlank()) ? "us-east-1" : r;
+    }
+
+    public static SnsClient sns(TestCloudConfig cfg) {
+        if (cfg.mode() == CloudMode.EMULATOR) {
+            LocalStackContainer ls = LocalStackHolder.ensureStartedSns();
+            Region region = Region.of(defaultRegion(cfg));
+            URI endpoint = ls.getEndpointOverride(LocalStackContainer.Service.SNS);
+            AwsCredentialsProvider creds = StaticCredentialsProvider.create(
+                AwsBasicCredentials.create(ls.getAccessKey(), ls.getSecretKey())
+            );
+            return SnsClient.builder()
+                .endpointOverride(endpoint)
+                .region(region)
+                .credentialsProvider(creds)
+                .build();
+        } else {
+            Region region = Region.of(defaultRegion(cfg));
+            return SnsClient.builder()
+                .region(region)
+                .credentialsProvider(DefaultCredentialsProvider.create())
+                .build();
+        }
+    }
+
+    public static DynamoDbClient dynamodb(TestCloudConfig cfg) {
+        if (cfg.mode() == CloudMode.EMULATOR) {
+            LocalStackContainer ls = LocalStackHolder.ensureStartedDynamoDB();
+            Region region = Region.of(defaultRegion(cfg));
+            URI endpoint = ls.getEndpointOverride(LocalStackContainer.Service.DYNAMODB);
+            AwsCredentialsProvider creds = StaticCredentialsProvider.create(
+                AwsBasicCredentials.create(ls.getAccessKey(), ls.getSecretKey())
+            );
+            return DynamoDbClient.builder()
+                .endpointOverride(endpoint)
+                .region(region)
+                .credentialsProvider(creds)
+                .build();
+        } else {
+            Region region = Region.of(defaultRegion(cfg));
+            return DynamoDbClient.builder()
+                .region(region)
+                .credentialsProvider(DefaultCredentialsProvider.create())
+                .build();
+        }
     }
 }
