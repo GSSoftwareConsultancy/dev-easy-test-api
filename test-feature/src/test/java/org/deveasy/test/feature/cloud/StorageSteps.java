@@ -4,16 +4,19 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.deveasy.test.core.cloud.capability.BlobStorage;
+import org.skyscreamer.jsonassert.JSONAssert;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Objects;
+import java.util.List;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Provider-neutral Storage (BlobStorage) steps backed by the resolved CloudAdapter.
@@ -33,25 +36,39 @@ public class StorageSteps {
 
     @When("I put object from file {string} as key {string}")
     public void iPutObjectFromFileAsKey(String path, String key) throws IOException {
-        if (storage == null) {
-            storage = CloudSelectionSteps.adapter().blobStorage();
-            bucketName = ScenarioState.get("bucketName");
-        }
+        ensureStorage();
         byte[] data = readBytesSmart(path);
         storage.putObject(bucketName, key, data, contentTypeFor(path));
         ScenarioState.put("lastKey", key);
     }
 
+    @When("I put JSON {string} as key {string}")
+    public void iPutJsonAsKey(String json, String key) {
+        ensureStorage();
+        storage.putObject(bucketName, key, json.getBytes(UTF_8), "application/json");
+        ScenarioState.put("lastKey", key);
+    }
+
     @Then("I can get object with key {string} containing JSON matching {string}")
-    public void iCanGetObjectContainingJson(String key, String expectedSubstring) {
+    public void iCanGetObjectContainingJson(String key, String expectedJson) throws Exception {
+        ensureStorage();
+        byte[] bytes = storage.getObject(bucketName, key);
+        assertNotNull(bytes, "Object should exist for key: " + key);
+        JSONAssert.assertEquals(expectedJson, new String(bytes, UTF_8), false);
+    }
+
+    @Then("the bucket {string} contains {int} objects")
+    public void bucketContainsNObjects(String bucket, int count) {
+        ensureStorage();
+        List<String> keys = storage.listKeys(bucket, null);
+        assertEquals(count, keys.size());
+    }
+
+    private void ensureStorage() {
         if (storage == null) {
             storage = CloudSelectionSteps.adapter().blobStorage();
             bucketName = ScenarioState.get("bucketName");
         }
-        byte[] bytes = storage.getObject(bucketName, key);
-        assertNotNull(bytes, "Object should exist for key: " + key);
-        String json = new String(bytes);
-        assertTrue(json.contains(expectedSubstring), () -> "JSON did not contain expected substring. json=" + json);
     }
 
     private static String contentTypeFor(String path) {

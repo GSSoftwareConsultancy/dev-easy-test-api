@@ -7,6 +7,7 @@ import org.deveasy.test.core.cloud.capability.Queue;
 
 import java.time.Duration;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -27,22 +28,38 @@ public class QueueSteps {
 
     @When("I send a message {string}")
     public void iSendAMessage(String body) {
-        if (queue == null) {
-            queue = CloudSelectionSteps.adapter().queue();
-            queueName = ScenarioState.get("queueName");
-        }
+        ensureQueue();
         queue.send(queueName, body);
+    }
+
+    @When("I send {int} messages")
+    public void iSendMessages(int count) {
+        ensureQueue();
+        for (int i = 0; i < count; i++) {
+            queue.send(queueName, "message-" + i);
+        }
     }
 
     @Then("within {int}s I receive a message matching {string}")
     public void withinSecondsIReceiveAMessageMatching(int seconds, String expectedSubstring) {
-        if (queue == null) {
-            queue = CloudSelectionSteps.adapter().queue();
-            queueName = ScenarioState.get("queueName");
-        }
+        ensureQueue();
         var received = queue.receive(queueName, Duration.ofSeconds(seconds));
         assertTrue(received.isPresent(), "Expected to receive a message within timeout");
         assertTrue(received.get().contains(expectedSubstring),
                 () -> "Received payload did not contain expected substring. payload=" + received.get());
+    }
+
+    @Then("no messages are available")
+    public void noMessagesAreAvailable() {
+        ensureQueue();
+        var received = queue.receive(queueName, Duration.ofSeconds(1));
+        assertFalse(received.isPresent(), "Expected no messages to be available");
+    }
+
+    private void ensureQueue() {
+        if (queue == null) {
+            queue = CloudSelectionSteps.adapter().queue();
+            queueName = ScenarioState.get("queueName");
+        }
     }
 }
