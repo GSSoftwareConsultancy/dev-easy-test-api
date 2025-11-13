@@ -717,6 +717,26 @@
                 </executions>
             </plugin>
 
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.5.0</version>
+            <executions>
+                <execution>
+                    <id>aggregate-javadocs</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>aggregate</goal>
+                    </goals>
+                    <configuration>
+                        <failOnWarnings>true</failOnWarnings>
+                        <doclint>all</doclint>
+                        <encoding>UTF-8</encoding>
+                        <source>17</source>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
         </plugins>
 
 
