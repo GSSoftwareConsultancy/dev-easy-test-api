@@ -3,7 +3,7 @@
     <parent>
         <groupId>org.deveasy</groupId>
         <artifactId>dev-easy-test</artifactId>
-        <version>0.2.0</version>
+        <version>0.3.0-alpha1-private.1</version>
     </parent>
     <artifactId>test-cloud-aws</artifactId>
     <name>dev easy test cloud - aws</name>
@@ -20,7 +20,7 @@
         <dependency>
             <groupId>org.deveasy</groupId>
             <artifactId>test-core</artifactId>
-            <version>0.2.0</version>
+            <version>${project.version}</version>
         </dependency>
 
         <!-- AWS SDK v2: S3 -->

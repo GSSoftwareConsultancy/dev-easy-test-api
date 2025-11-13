@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.deveasy</groupId>
     <artifactId>dev-easy-test</artifactId>
-    <version>0.2.0</version>
+    <version>0.3.0-alpha1-private.1</version>
     <packaging>pom</packaging>
     <name>dev-easy-test-api</name>
     <description>API for making the testing easy</description>
@@ -24,6 +24,9 @@
         <maven.compiler.release>17</maven.compiler.release>
         <!-- Deterministic timestamp for Reproducible Builds (ISO-8601 UTC) -->
         <project.build.outputTimestamp>2025-01-01T00:00:00Z</project.build.outputTimestamp>
+        <!-- Optional: provide private repository endpoints via environment or -D properties when using -Pprivate-release -->
+        <private.deploy.url>${env.PRIVATE_DEPLOY_URL}</private.deploy.url>
+        <private.deploy.snapshotUrl>${env.PRIVATE_DEPLOY_SNAPSHOT_URL}</private.deploy.snapshotUrl>
     </properties>
     <licenses>
         <license>
@@ -269,6 +272,26 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+
+        <profile>
+            <id>private-release</id>
+            <activation>
+                <property>
+                    <name>privateRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>private</id>
+                    <url>${private.deploy.url}</url>
+                </repository>
+                <snapshotRepository>
+                    <id>private</id>
+                    <url>${private.deploy.snapshotUrl}</url>
+                </snapshotRepository>
+            </distributionManagement>
         </profile>
 
     </profiles>
