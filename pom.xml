@@ -253,18 +253,19 @@
                         <configuration>
                             <release>17</release>
                             <compilerArgs>
-                                <arg>-Xplugin:ErrorProne</arg>
-                                <arg>-XepDisableAllChecks</arg>
-                                <!-- Targeted ERROR rules (rest WARN by default) -->
-                                <arg>-Xep:EqualsIncompatibleType:ERROR</arg>
-                                <arg>-Xep:FutureReturnValueIgnored:ERROR</arg>
-                                <!-- Common helpful WARN checks -->
-                                <arg>-Xep:NullPointerConstant:WARN</arg>
-                                <arg>-Xep:StringSplitter:WARN</arg>
+                                <arg>-XDcompilePolicy=simple</arg>
+                                <arg>-Xplugin:ErrorProne -XepAllDisabledChecksAsWarnings -Werror</arg>
                             </compilerArgs>
                             <showWarnings>true</showWarnings>
                             <fork>true</fork>
                         </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.google.errorprone</groupId>
+                                <artifactId>error_prone_core</artifactId>
+                                <version>2.29.2</version>
+                            </dependency>
+                        </dependencies>
                     </plugin>
                 </plugins>
             </build>

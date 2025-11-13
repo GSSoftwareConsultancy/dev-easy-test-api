@@ -91,7 +91,7 @@ public class HttpClientSteps {
         HttpClient httpClient = HttpClientBuilder.create().build();
         request.addHeader("User-Agent", USER_AGENT);
         request.addHeader("Content-type", APPLICATION_JSON);
-        if (!jsonFile.equals("")) {
+        if (jsonFile != null && !jsonFile.isEmpty()) {
             String json = readFile(jsonFile);
             logger.info("post-json : " + json);
             request.setEntity(new StringEntity(json));

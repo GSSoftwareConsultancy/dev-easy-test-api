@@ -41,10 +41,9 @@ jobs:
         run: mvn -q -DskipTests=true validate
 
   errorprone:
-    name: Error Prone (soft/WARN)
+    name: Error Prone (strict/ERROR)
     runs-on: ubuntu-latest
     needs: static
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -52,9 +51,8 @@ jobs:
           distribution: temurin
           java-version: '17'
           cache: 'maven'
-      - name: Compile with Error Prone profile (soft)
-        run: |
-          mvn -q -DskipTests=true -Perrorprone verify || echo "[WARN] Error Prone profile not active or plugin unavailable; running in advisory mode"
+      - name: Compile with Error Prone profile (strict)
+        run: mvn -q -DskipTests=true -Perrorprone verify
 
   deps:
     name: Dependencies audit (OWASP report-only)

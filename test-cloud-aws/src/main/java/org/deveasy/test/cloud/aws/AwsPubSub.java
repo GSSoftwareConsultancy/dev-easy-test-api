@@ -43,7 +43,7 @@ public final class AwsPubSub implements PubSub {
         String arn = findTopicArnByName(name);
         if (arn != null) return;
         // Create topic if not found
-        CreateTopicResponse resp = sns.createTopic(CreateTopicRequest.builder().name(name).build());
+        sns.createTopic(CreateTopicRequest.builder().name(name).build());
     }
 
     @Override
