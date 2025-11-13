@@ -24,9 +24,6 @@
         <maven.compiler.release>17</maven.compiler.release>
         <!-- Deterministic timestamp for Reproducible Builds (ISO-8601 UTC) -->
         <project.build.outputTimestamp>2025-01-01T00:00:00Z</project.build.outputTimestamp>
-        <!-- Optional: provide private repository endpoints via environment or -D properties when using -Pprivate-release -->
-        <private.deploy.url>${env.PRIVATE_DEPLOY_URL}</private.deploy.url>
-        <private.deploy.snapshotUrl>${env.PRIVATE_DEPLOY_SNAPSHOT_URL}</private.deploy.snapshotUrl>
     </properties>
     <licenses>
         <license>
@@ -274,25 +271,6 @@
             </build>
         </profile>
 
-        <profile>
-            <id>private-release</id>
-            <activation>
-                <property>
-                    <name>privateRelease</name>
-                    <value>true</value>
-                </property>
-            </activation>
-            <distributionManagement>
-                <repository>
-                    <id>private</id>
-                    <url>${private.deploy.url}</url>
-                </repository>
-                <snapshotRepository>
-                    <id>private</id>
-                    <url>${private.deploy.snapshotUrl}</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
 
     </profiles>
 
@@ -333,33 +311,6 @@
                     <version>1.6</version>
                 </plugin>
 
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.0.0-M1</version>
-                    <configuration>
-                        <use>false</use>
-                        <excludePackageNames>cucumber.runtime,cucumber.runtime.*,org.springframework
-                        </excludePackageNames>
-                        <links>
-                            <link>http://docs.oracle.com/javase/7/docs/api/</link>
-                            <link>http://junit.sourceforge.net/javadoc/</link>
-                        </links>
-                        <groups>
-                            <group>
-                                <title>Main API Packages</title>
-                                <packages>cucumber.api:cucumber.api.*</packages>
-                            </group>
-                            <group>
-                                <title>I18n - Java</title>
-                                <packages>cucumber.api.java.*</packages>
-                            </group>
-                        </groups>
-                        <!-- Won't work for children, but works for top level javadoc:aggregate. Good enough. -->
-                        <!--<stylesheetfile>${basedir}/doc/javadoc.css</stylesheetfile>-->
-                        <stylesheet>java</stylesheet>
-                    </configuration>
-                </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>

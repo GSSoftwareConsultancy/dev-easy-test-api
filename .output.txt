@@ -21,553 +21,293 @@
 [INFO] Deleting /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api (includes = [**/*.ser], excludes = [])
 [INFO]
 [INFO] --- enforcer:3.4.1:enforce (enforce) @ dev-easy-test ---
-[INFO] Skipping Rule Enforcement.
-[INFO]
-[INFO] --- jacoco:0.8.11:prepare-agent (prepare-agent) @ dev-easy-test ---
-[INFO] argLine set to -javaagent:/Users/josepharuja/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/target/jacoco.exec
-[INFO]
-[INFO] --- jacoco:0.8.11:report (report) @ dev-easy-test ---
-[INFO] Skipping JaCoCo execution due to missing execution data file.
-[INFO]
-[INFO] --- jacoco:0.8.11:report-aggregate (report-aggregate) @ dev-easy-test ---
-[INFO]
-[INFO] --- jacoco:0.8.11:check (check) @ dev-easy-test ---
-[INFO] Skipping JaCoCo execution due to missing execution data file:/Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/target/jacoco.exec
-[INFO]
-[INFO] --- spotless:2.43.0:check (default) @ dev-easy-test ---
-[INFO] Spotless check skipped
-[INFO]
-[INFO] --- checkstyle:3.3.1:check (default) @ dev-easy-test ---
-[INFO]
-[INFO] --- dependency-check:8.4.0:check (default) @ dev-easy-test ---
-[INFO] Artifact org.yaml:snakeyaml:jar:2.0 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots, default, snapshots)]
-[INFO] Artifact commons-validator:commons-validator:jar:1.7 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots)]
-[INFO] Artifact commons-digester:commons-digester:jar:2.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
-[INFO] Artifact org.apache.maven.shared:maven-artifact-transfer:jar:0.13.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots)]
-[INFO] Artifact org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.0.0.M2a is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), maven-default-http-blocker (http://0.0.0.0/, default, snapshots, blocked)]
-[INFO] Artifact org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.0.0.M2a is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), maven-default-http-blocker (http://0.0.0.0/, default, snapshots, blocked), sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots, default, snapshots)]
-[INFO] Artifact asm:asm:jar:3.3.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), maven-default-http-blocker (http://0.0.0.0/, default, snapshots, blocked), sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots, default, snapshots)]
-[INFO] Artifact org.codehaus.plexus:plexus-interpolation:jar:1.16 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), maven-default-http-blocker (http://0.0.0.0/, default, snapshots, blocked)]
-[INFO] Artifact org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.0 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
-[INFO] Artifact org.yaml:snakeyaml:jar:2.0 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots, default, snapshots)]
-[INFO] Artifact commons-validator:commons-validator:jar:1.7 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots)]
-[INFO] Artifact commons-digester:commons-digester:jar:2.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
-[INFO] Artifact org.apache.maven.shared:maven-artifact-transfer:jar:0.13.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots)]
-[INFO] Artifact org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.0.0.M2a is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), maven-default-http-blocker (http://0.0.0.0/, default, snapshots, blocked)]
-[INFO] Artifact org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.0.0.M2a is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), maven-default-http-blocker (http://0.0.0.0/, default, snapshots, blocked), sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots, default, snapshots)]
-[INFO] Artifact asm:asm:jar:3.3.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), maven-default-http-blocker (http://0.0.0.0/, default, snapshots, blocked), sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots, default, snapshots)]
-[INFO] Artifact org.codehaus.plexus:plexus-interpolation:jar:1.16 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), maven-default-http-blocker (http://0.0.0.0/, default, snapshots, blocked)]
-[INFO] Artifact org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.0 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [maven-central (https://repo1.maven.org/maven2, default, releases+snapshots), sonatype.org (https://oss.sonatype.org/content/repositories/releases, default, releases+snapshots), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/owasp/dependency-check-core/8.4.0/dependency-check-core-8.4.0.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/owasp/dependency-check-core/8.4.0/dependency-check-core-8.4.0.jar (1.1 MB at 3.2 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/anarres/jdiagnostics/jdiagnostics/1.0.7/jdiagnostics-1.0.7.jar
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/whitesource/pecoff4j/0.0.2.1/pecoff4j-0.0.2.1.jar
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/commons/commons-jcs-core/2.2.1/commons-jcs-core-2.2.1.jar
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/github/package-url/packageurl-java/1.4.1/packageurl-java-1.4.1.jar
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/us/springett/cpe-parser/2.0.2/cpe-parser-2.0.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/anarres/jdiagnostics/jdiagnostics/1.0.7/jdiagnostics-1.0.7.jar (60 kB at 1.2 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/semver4j/semver4j/5.1.0/semver4j-5.1.0.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/whitesource/pecoff4j/0.0.2.1/pecoff4j-0.0.2.1.jar (117 kB at 1.2 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/commons/commons-dbcp2/2.9.0/commons-dbcp2-2.9.0.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/github/package-url/packageurl-java/1.4.1/packageurl-java-1.4.1.jar (16 kB at 146 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.10.0/commons-pool2-2.10.0.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/semver4j/semver4j/5.1.0/semver4j-5.1.0.jar (39 kB at 342 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/lucene/lucene-core/8.11.2/lucene-core-8.11.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/us/springett/cpe-parser/2.0.2/cpe-parser-2.0.2.jar (30 kB at 256 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/lucene/lucene-analyzers-common/8.11.2/lucene-analyzers-common-8.11.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/commons/commons-jcs-core/2.2.1/commons-jcs-core-2.2.1.jar (534 kB at 3.9 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/lucene/lucene-queryparser/8.11.2/lucene-queryparser-8.11.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.10.0/commons-pool2-2.10.0.jar (141 kB at 866 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/lucene/lucene-queries/8.11.2/lucene-queries-8.11.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/commons/commons-dbcp2/2.9.0/commons-dbcp2-2.9.0.jar (211 kB at 911 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/lucene/lucene-sandbox/8.11.2/lucene-sandbox-8.11.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/lucene/lucene-core/8.11.2/lucene-core-8.11.2.jar (3.6 MB at 15 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/velocity/velocity-engine-core/2.3/velocity-engine-core-2.3.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/lucene/lucene-queryparser/8.11.2/lucene-queryparser-8.11.2.jar (383 kB at 1.5 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/glassfish/javax.json/1.1.4/javax.json-1.1.4.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/lucene/lucene-queries/8.11.2/lucene-queries-8.11.2.jar (382 kB at 1.5 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/velocity/velocity-engine-core/2.3/velocity-engine-core-2.3.jar (531 kB at 1.8 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/lucene/lucene-analyzers-common/8.11.2/lucene-analyzers-common-8.11.2.jar (1.8 MB at 5.8 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/glassfish/javax.json/1.1.4/javax.json-1.1.4.jar (129 kB at 419 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-afterburner/2.15.2/jackson-module-afterburner-2.15.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/lucene/lucene-sandbox/8.11.2/lucene-sandbox-8.11.2.jar (245 kB at 783 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-blackbird/2.15.2/jackson-module-blackbird-2.15.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar (76 kB at 225 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.2/jackson-dataformat-yaml-2.15.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar (1.6 MB at 4.5 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/yaml/snakeyaml/2.0/snakeyaml-2.0.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-afterburner/2.15.2/jackson-module-afterburner-2.15.2.jar (216 kB at 588 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/h3xstream/retirejs/retirejs-core/3.0.4/retirejs-core-3.0.4.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-blackbird/2.15.2/jackson-module-blackbird-2.15.2.jar (65 kB at 173 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/esotericsoftware/minlog/1.3.1/minlog-1.3.1.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.2/jackson-dataformat-yaml-2.15.2.jar (55 kB at 142 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/github/spullara/mustache/java/compiler/0.9.6/compiler-0.9.6.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/yaml/snakeyaml/2.0/snakeyaml-2.0.jar (0 B at 0 B/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/sonatype/ossindex/ossindex-service-client/1.8.2/ossindex-service-client-1.8.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar (549 kB at 1.3 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/sonatype/ossindex/ossindex-service-api/1.8.2/ossindex-service-api-1.8.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/h3xstream/retirejs/retirejs-core/3.0.4/retirejs-core-3.0.4.jar (34 kB at 81 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/sonatype/goodies/package-url-java/1.1.1/package-url-java-1.1.1.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/esotericsoftware/minlog/1.3.1/minlog-1.3.1.jar (5.9 kB at 14 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.7.28/jcl-over-slf4j-1.7.28.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/github/spullara/mustache/java/compiler/0.9.6/compiler-0.9.6.jar (101 kB at 237 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/joda-time/joda-time/2.10.4/joda-time-2.10.4.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/sonatype/goodies/package-url-java/1.1.1/package-url-java-1.1.1.jar (29 kB at 63 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/sonatype/ossindex/ossindex-service-api/1.8.2/ossindex-service-api-1.8.2.jar (31 kB at 65 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/joda-time/joda-time/2.10.4/joda-time-2.10.4.jar (643 kB at 1.4 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.7.28/jcl-over-slf4j-1.7.28.jar (16 kB at 35 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/moandjiezana/toml/toml4j/0.7.2/toml4j-0.7.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/sonatype/ossindex/ossindex-service-client/1.8.2/ossindex-service-client-1.8.2.jar (53 kB at 108 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/hankcs/aho-corasick-double-array-trie/1.2.3/aho-corasick-double-array-trie-1.2.3.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/moandjiezana/toml/toml4j/0.7.2/toml4j-0.7.2.jar (63 kB at 121 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/commons-validator/commons-validator/1.7/commons-validator-1.7.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar (249 kB at 478 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/commons-digester/commons-digester/2.1/commons-digester-2.1.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/hankcs/aho-corasick-double-array-trie/1.2.3/aho-corasick-double-array-trie-1.2.3.jar (17 kB at 33 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/eclipse/packager/packager-rpm/0.19.0/packager-rpm-0.19.0.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar (16 kB at 30 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/eclipse/packager/packager-core/0.19.0/packager-core-0.19.0.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/commons-digester/commons-digester/2.1/commons-digester-2.1.jar (0 B at 0 B/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk18on/1.71/bcprov-jdk18on-1.71.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/commons-validator/commons-validator/1.7/commons-validator-1.7.jar (0 B at 0 B/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/bouncycastle/bcpg-jdk18on/1.71/bcpg-jdk18on-1.71.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/eclipse/packager/packager-rpm/0.19.0/packager-rpm-0.19.0.jar (178 kB at 304 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/owasp/dependency-check-utils/8.4.0/dependency-check-utils-8.4.0.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar (3.0 MB at 5.2 MB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-xml/4.0.2/plexus-xml-4.0.2.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/eclipse/packager/packager-core/0.19.0/packager-core-0.19.0.jar (21 kB at 35 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/maven/maven-xml-impl/4.0.0-alpha-7/maven-xml-impl-4.0.0-alpha-7.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/bouncycastle/bcpg-jdk18on/1.71/bcpg-jdk18on-1.71.jar (379 kB at 596 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/maven/maven-api-xml/4.0.0-alpha-7/maven-api-xml-4.0.0-alpha-7.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/maven/maven-xml-impl/4.0.0-alpha-7/maven-xml-impl-4.0.0-alpha-7.jar (19 kB at 30 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/maven/maven-api-meta/4.0.0-alpha-7/maven-api-meta-4.0.0-alpha-7.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-xml/4.0.2/plexus-xml-4.0.2.jar (89 kB at 136 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.13.1/maven-artifact-transfer-0.13.1.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/owasp/dependency-check-utils/8.4.0/dependency-check-utils-8.4.0.jar (56 kB at 82 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.13.1/maven-artifact-transfer-0.13.1.jar (0 B at 0 B/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/maven/maven-api-xml/4.0.0-alpha-7/maven-api-xml-4.0.0-alpha-7.jar (8.4 kB at 12 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/asm/asm/3.3.1/asm-3.3.1.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/maven/maven-api-meta/4.0.0-alpha-7/maven-api-meta-4.0.0-alpha-7.jar (12 kB at 16 kB/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar (0 B at 0 B/s)
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar (0 B at 0 B/s)
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/asm/asm/3.3.1/asm-3.3.1.jar (0 B at 0 B/s)
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.0/maven-common-artifact-filters-3.1.0.jar
-[INFO] Downloading from maven-central: https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/4.7.3/spotbugs-annotations-4.7.3.jar
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.16/plexus-interpolation-1.16.jar (0 B at 0 B/s)
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk18on/1.71/bcprov-jdk18on-1.71.jar (6.1 MB at 7.8 MB/s)
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar (31 kB at 39 kB/s)
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/com/github/spotbugs/spotbugs-annotations/4.7.3/spotbugs-annotations-4.7.3.jar (15 kB at 19 kB/s)
-[INFO] Downloaded from maven-central: https://repo1.maven.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.0/maven-common-artifact-filters-3.1.0.jar (0 B at 0 B/s)
-[INFO] Skipping dependency-check
-[INFO]
-[INFO] >>> javadoc:3.5.0:aggregate (aggregate-javadocs) > compile @ dev-easy-test >>>
-[INFO]
-[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-[INFO] Forking dev-easy-test-api 0.3.0-alpha1-private.1
-[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-[INFO]
-[INFO] --- enforcer:3.4.1:enforce (enforce) @ dev-easy-test ---
-[INFO] Skipping Rule Enforcement.
-[INFO]
-[INFO] --- jacoco:0.8.11:prepare-agent (prepare-agent) @ dev-easy-test ---
-[INFO] argLine set to -javaagent:/Users/josepharuja/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/target/jacoco.exec
-[INFO]
-[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-[INFO] Forking dev easy test core 0.3.0-alpha1-private.1
-[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-[INFO]
-[INFO] --- enforcer:3.4.1:enforce (enforce) @ test-core ---
-[INFO] Skipping Rule Enforcement.
-[INFO]
-[INFO] --- jacoco:0.8.11:prepare-agent (prepare-agent) @ test-core ---
-[INFO] argLine set to -javaagent:/Users/josepharuja/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/target/jacoco.exec
-[INFO]
-[INFO] --- resources:3.0.2:resources (default-resources) @ test-core ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/resources
-[INFO]
-[INFO] --- compiler:3.11.0:compile (default-compile) @ test-core ---
-[INFO] Nothing to compile - all classes are up to date
-[INFO]
-[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-[INFO] Forking dev easy test cloud - aws 0.3.0-alpha1-private.1
-[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-[INFO]
-[INFO] --- enforcer:3.4.1:enforce (enforce) @ test-cloud-aws ---
-[INFO] Skipping Rule Enforcement.
-[INFO]
-[INFO] --- jacoco:0.8.11:prepare-agent (prepare-agent) @ test-cloud-aws ---
-[INFO] argLine set to -javaagent:/Users/josepharuja/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/target/jacoco.exec
-[INFO]
-[INFO] --- resources:3.0.2:resources (default-resources) @ test-cloud-aws ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] Copying 1 resource
-[INFO]
-[INFO] --- compiler:3.11.0:compile (default-compile) @ test-cloud-aws ---
-[INFO] Nothing to compile - all classes are up to date
-[INFO]
-[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-[INFO] Forking dev easy test feature 0.3.0-alpha1-private.1
-[INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-[INFO] Downloading from spring-releases: https://repo.spring.io/release/io/cucumber/messages/maven-metadata.xml
-[WARNING] Could not transfer metadata io.cucumber:messages/maven-metadata.xml from/to spring-releases (https://repo.spring.io/release): status code: 401, reason phrase:  (401)
-[WARNING] io.cucumber:messages/maven-metadata.xml failed to transfer from https://repo.spring.io/release during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of spring-releases has elapsed or updates are forced. Original error: Could not transfer metadata io.cucumber:messages/maven-metadata.xml from/to spring-releases (https://repo.spring.io/release): status code: 401, reason phrase:  (401)
-[WARNING] io.cucumber:messages/maven-metadata.xml failed to transfer from https://repo.spring.io/release during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of spring-releases has elapsed or updates are forced. Original error: Could not transfer metadata io.cucumber:messages/maven-metadata.xml from/to spring-releases (https://repo.spring.io/release): status code: 401, reason phrase:  (401)
-[INFO]
-[INFO] --- enforcer:3.4.1:enforce (enforce) @ test-feature ---
-[INFO] Skipping Rule Enforcement.
-[INFO]
-[INFO] --- jacoco:0.8.11:prepare-agent (prepare-agent) @ test-feature ---
-[INFO] argLine set to -javaagent:/Users/josepharuja/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=/Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/target/jacoco.exec
-[INFO]
-[INFO] --- resources:3.0.2:resources (default-resources) @ test-feature ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/resources
-[INFO]
-[INFO] --- compiler:3.11.0:compile (default-compile) @ test-feature ---
-[INFO] Nothing to compile - all classes are up to date
-[INFO]
-[INFO] <<< javadoc:3.5.0:aggregate (aggregate-javadocs) < compile @ dev-easy-test <<<
-[INFO]
-[WARNING] io.cucumber:messages/maven-metadata.xml failed to transfer from https://repo.spring.io/release during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of spring-releases has elapsed or updates are forced. Original error: Could not transfer metadata io.cucumber:messages/maven-metadata.xml from/to spring-releases (https://repo.spring.io/release): status code: 401, reason phrase:  (401)
-[WARNING] io.cucumber:messages/maven-metadata.xml failed to transfer from https://repo.spring.io/release during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of spring-releases has elapsed or updates are forced. Original error: Could not transfer metadata io.cucumber:messages/maven-metadata.xml from/to spring-releases (https://repo.spring.io/release): status code: 401, reason phrase:  (401)
-[WARNING] io.cucumber:messages/maven-metadata.xml failed to transfer from https://repo.spring.io/release during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of spring-releases has elapsed or updates are forced. Original error: Could not transfer metadata io.cucumber:messages/maven-metadata.xml from/to spring-releases (https://repo.spring.io/release): status code: 401, reason phrase:  (401)
-[INFO]
-[INFO] --- javadoc:3.5.0:aggregate (aggregate-javadocs) @ dev-easy-test ---
-[WARNING]  Parameter 'stylesheet' (user property 'stylesheet') is deprecated: This is no longer evaluated, instead use addStylesheets to customize the CSS.
-[WARNING] io.cucumber:messages/maven-metadata.xml failed to transfer from https://repo.spring.io/release during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of spring-releases has elapsed or updates are forced. Original error: Could not transfer metadata io.cucumber:messages/maven-metadata.xml from/to spring-releases (https://repo.spring.io/release): status code: 401, reason phrase:  (401)
-[WARNING] io.cucumber:messages/maven-metadata.xml failed to transfer from https://repo.spring.io/release during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of spring-releases has elapsed or updates are forced. Original error: Could not transfer metadata io.cucumber:messages/maven-metadata.xml from/to spring-releases (https://repo.spring.io/release): status code: 401, reason phrase:  (401)
-[WARNING] io.cucumber:messages/maven-metadata.xml failed to transfer from https://repo.spring.io/release during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of spring-releases has elapsed or updates are forced. Original error: Could not transfer metadata io.cucumber:messages/maven-metadata.xml from/to spring-releases (https://repo.spring.io/release): status code: 401, reason phrase:  (401)
-[INFO] No previous run data found, generating javadoc.
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary for dev-easy-test-api 0.3.0-alpha1-private.1:
 [INFO]
-[INFO] dev-easy-test-api .................................. FAILURE [  7.004 s]
+[INFO] dev-easy-test-api .................................. FAILURE [  0.473 s]
 [INFO] dev easy test core ................................. SKIPPED
 [INFO] dev easy test cloud - aws .......................... SKIPPED
 [INFO] dev easy test feature .............................. SKIPPED
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  7.361 s
-[INFO] Finished at: 2025-11-13T13:18:17Z
+[INFO] Total time:  0.828 s
+[INFO] Finished at: 2025-11-13T14:31:42Z
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-javadoc-plugin:3.5.0:aggregate (aggregate-javadocs) on project dev-easy-test: An error has occurred in Javadoc report generation:
-[ERROR] Exit code: 1
-[ERROR] warning: URL https://docs.oracle.com/javase/7/docs/api/element-list was redirected to https://docs.oracle.com/en/java/javase/25/ -- Update the command-line options to suppress this warning.
-[ERROR] error: Error fetching URL: http://junit.sourceforge.net/javadoc/ (java.io.FileNotFoundException: https://junit.sourceforge.net/javadoc/package-list)
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/types/SupportedCloudPlatform.java:21: warning: empty comment
-[ERROR] public enum SupportedCloudPlatform {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/types/SupportedMigrationTool.java:21: warning: empty comment
-[ERROR] public enum SupportedMigrationTool {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/types/SupportedDatabase.java:21: warning: empty comment
-[ERROR] public enum SupportedDatabase {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsSesSteps.java:23: warning: empty comment
-[ERROR] public class AwsSesSteps {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsS3Steps.java:21: warning: empty comment
-[ERROR] public class AwsS3Steps {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/ApplicationStartUpSteps.java:33: warning: no comment
-[ERROR] public class ApplicationStartUpSteps {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/ApplicationStartUpSteps.java:37: warning: no comment
-[ERROR]     public static final String ORG_SPRINGFRAMEWORK_BOOT_SPRING_APPLICATION = "org.springframework.boot.SpringApplication";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/ApplicationStartUpSteps.java:39: warning: no comment
-[ERROR]     public static final String ORG_SPRINGFRAMEWORK_BOOT_SPRING_APPLICATION_METHOD_NAME = "run";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/ApplicationStartUpSteps.java:35: warning: no comment
-[ERROR]     public static final String SPRING_PROFILES_ACTIVE = "spring.profiles.active";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/ApplicationStartUpSteps.java:45: warning: no comment
-[ERROR]     public ApplicationStartUpSteps(ScenarioState scenarioState) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/ApplicationStartUpSteps.java:51: warning: no comment
-[ERROR]     public void applicationIsRunningWithProvidedApplicationClassAndArguments(String applicationClassName, String profile, String port) throws Throwable {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/AwsBlobStorage.java:23: warning: no comment
-[ERROR] public final class AwsBlobStorage implements BlobStorage {
-[ERROR]              ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/AwsBlobStorage.java:28: warning: no comment
-[ERROR]     public AwsBlobStorage(TestCloudConfig cfg) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/AwsBlobStorage.java:167: warning: no comment
-[ERROR]     public String getString(String bucket, String key) {
-[ERROR]                   ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/AwsBlobStorage.java:163: warning: no comment
-[ERROR]     public void putJson(String bucket, String key, String json) {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/internal/AwsClients.java:21: warning: no comment
-[ERROR] public final class AwsClients {
-[ERROR]              ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/internal/AwsClients.java:98: warning: no comment
-[ERROR]     public static DynamoDbClient dynamodb(TestCloudConfig cfg) {
-[ERROR]                                  ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/internal/AwsClients.java:25: warning: no comment
-[ERROR]     public static S3Client s3(TestCloudConfig cfg) {
-[ERROR]                            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/internal/AwsClients.java:76: warning: no comment
-[ERROR]     public static SnsClient sns(TestCloudConfig cfg) {
-[ERROR]                             ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/internal/AwsClients.java:49: warning: no comment
-[ERROR]     public static SqsClient sqs(TestCloudConfig cfg) {
-[ERROR]                             ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/AwsCloudAdapter.java:18: warning: use of default constructor, which does not provide a comment
-[ERROR] public final class AwsCloudAdapter implements CloudAdapter {
-[ERROR]              ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/AwsDynamoDB.java:19: warning: no comment
-[ERROR] public final class AwsDynamoDB implements NoSqlTable {
-[ERROR]              ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/AwsDynamoDB.java:32: warning: no comment
-[ERROR]     public AwsDynamoDB(TestCloudConfig cfg) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsDynamoDBSteps.java:29: warning: no comment
-[ERROR]     public AwsDynamoDBSteps(ScenarioState scenarioState) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsEC2ContainerSteps.java:22: warning: use of default constructor, which does not provide a comment
-[ERROR] public class AwsEC2ContainerSteps {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsElasticCacheSteps.java:23: warning: use of default constructor, which does not provide a comment
-[ERROR] public class AwsElasticCacheSteps {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsKinesisSteps.java:28: warning: no comment
-[ERROR]     public AwsKinesisSteps(ScenarioState scenarioState) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsLambdaSteps.java:22: warning: use of default constructor, which does not provide a comment
-[ERROR] public class AwsLambdaSteps {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/AwsPubSub.java:25: warning: no comment
-[ERROR] public final class AwsPubSub implements PubSub {
-[ERROR]              ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/AwsPubSub.java:31: warning: no comment
-[ERROR]     public AwsPubSub(TestCloudConfig cfg) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/AwsQueue.java:35: warning: no comment
-[ERROR]     public AwsQueue(TestCloudConfig cfg) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsS3Steps.java:21: warning: use of default constructor, which does not provide a comment
-[ERROR] public class AwsS3Steps {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsSesSteps.java:26: warning: no comment
-[ERROR]     public AwsSesSteps(ScenarioState scenarioState) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsSnsSteps.java:22: warning: use of default constructor, which does not provide a comment
-[ERROR] public class AwsSnsSteps {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/AwsSQSSteps.java:29: warning: no comment
-[ERROR]     public AwsSQSSteps(ScenarioState scenarioState) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/spi/CloudAdapters.java:32: warning: no @param for provider
-[ERROR]     public static CloudAdapter get(CloudProvider provider, TestCloudConfig config) {
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/spi/CloudAdapters.java:32: warning: no @param for config
-[ERROR]     public static CloudAdapter get(CloudProvider provider, TestCloudConfig config) {
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/spi/CloudAdapters.java:32: warning: no @return
-[ERROR]     public static CloudAdapter get(CloudProvider provider, TestCloudConfig config) {
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/spi/CloudAdapters.java:47: warning: no @param for provider
-[ERROR]     public static Optional<CloudAdapter> tryGet(CloudProvider provider) {
-[ERROR]                                          ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/spi/CloudAdapters.java:47: warning: no @return
-[ERROR]     public static Optional<CloudAdapter> tryGet(CloudProvider provider) {
-[ERROR]                                          ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:41: warning: no @return
-[ERROR]     public TestCloudConfig config() {
-[ERROR]                            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:54: warning: no @return
-[ERROR]     public Optional<CloudAdapter> initAdapterIfAvailable() {
-[ERROR]                                   ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:20: warning: use of default constructor, which does not provide a comment
-[ERROR] public final class CloudContext {
-[ERROR]              ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:62: warning: no comment
-[ERROR]     public Optional<CloudAdapter> adapter() { return Optional.ofNullable(adapter); }
-[ERROR]                                   ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:31: warning: no comment
-[ERROR]     public CloudMode getMode() { return mode; }
-[ERROR]                      ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:33: warning: no comment
-[ERROR]     public String getProjectOrAccount() { return projectOrAccount; }
-[ERROR]                   ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:30: warning: no comment
-[ERROR]     public CloudProvider getProvider() { return provider; }
-[ERROR]                          ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:32: warning: no comment
-[ERROR]     public String getRegionOrLocation() { return regionOrLocation; }
-[ERROR]                   ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:71: warning: no comment
-[ERROR]     public static CloudMode parseMode(String value) {
-[ERROR]                             ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:65: warning: no comment
-[ERROR]     public static CloudProvider parseProvider(String value) {
-[ERROR]                                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:36: warning: no comment
-[ERROR]     public void setMode(CloudMode mode) { this.mode = mode; this.config = null; }
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:38: warning: no comment
-[ERROR]     public void setProjectOrAccount(String value) { this.projectOrAccount = value; this.config = null; }
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:35: warning: no comment
-[ERROR]     public void setProvider(CloudProvider provider) { this.provider = provider; this.config = null; }
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/state/CloudContext.java:37: warning: no comment
-[ERROR]     public void setRegionOrLocation(String value) { this.regionOrLocation = value; this.config = null; }
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/junit/CloudExtension.java:23: warning: use of default constructor, which does not provide a comment
-[ERROR] public final class CloudExtension implements BeforeAllCallback, AfterAllCallback, ParameterResolver {
-[ERROR]              ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudMode.java:11: warning: no comment
-[ERROR]     EMULATOR,
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudMode.java:12: warning: no comment
-[ERROR]     LIVE
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudProvider.java:11: warning: no comment
-[ERROR]     AWS,
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudProvider.java:12: warning: no comment
-[ERROR]     AZURE,
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudProvider.java:13: warning: no comment
-[ERROR]     GCP
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/CloudSelectionSteps.java:25: warning: no comment
-[ERROR]     public CloudSelectionSteps(ScenarioState state) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/CloudSelectionSteps.java:56: warning: no comment
-[ERROR]     public void initializeAdapterIfAvailable() {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/CloudSelectionSteps.java:37: warning: no comment
-[ERROR]     public void selectMode(String modeName) {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/CloudSelectionSteps.java:30: warning: no comment
-[ERROR]     public void selectProvider(String providerName) {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/CloudSelectionSteps.java:50: warning: no comment
-[ERROR]     public void setProjectOrAccount(String value) {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/CloudSelectionSteps.java:44: warning: no comment
-[ERROR]     public void setRegionOrLocation(String value) {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudServiceType.java:16: warning: no comment
-[ERROR]     KMS
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudServiceType.java:14: warning: no comment
-[ERROR]     NOSQL,
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudServiceType.java:13: warning: no comment
-[ERROR]     PUBSUB,
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudServiceType.java:12: warning: no comment
-[ERROR]     QUEUE,
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudServiceType.java:15: warning: no comment
-[ERROR]     SECRETS,
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-core/src/main/java/org/deveasy/test/core/cloud/CloudServiceType.java:11: warning: no comment
-[ERROR]     STORAGE,
-[ERROR]     ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/config/Configuration.java:18: warning: no comment
-[ERROR] public class Configuration {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/config/Configuration.java:18: warning: use of default constructor, which does not provide a comment
-[ERROR] public class Configuration {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/DatabaseMigrationSteps.java:31: warning: no comment
-[ERROR]     public static final String DEFAULT_JDBC_MYSQL_URL_WITH_DEFAULT_PORT = "jdbc:mysql://localhost:3306/retail_detail?useSSL=false";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/DatabaseMigrationSteps.java:33: warning: no comment
-[ERROR]     public static final String DEFAULT_PASSWORD = "P4ssw0rd";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/DatabaseMigrationSteps.java:32: warning: no comment
-[ERROR]     public static final String DEFAULT_USER = "dev";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/DatabaseMigrationSteps.java:37: warning: no comment
-[ERROR]     public DatabaseMigrationSteps(ScenarioState scenarioState) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/DatabaseMigrationSteps.java:42: warning: no comment
-[ERROR]     public void requiredTablesAndDataAreSetUpUsingFlyWay() throws Throwable {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/DatabaseMigrationSteps.java:49: warning: no comment
-[ERROR]     public void requiredTablesAndDataAreSetUpUsingFlyWayWithUrlUsernameAndPassword(String dbUrl, String username, String password) throws Throwable {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/DatabaseSteps.java:29: warning: no comment
-[ERROR]     public DatabaseSteps(ScenarioState scenarioState) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/DockerClientSteps.java:28: warning: no comment
-[ERROR]     public DockerClientSteps(ScenarioState scenarioState) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:54: warning: no comment
-[ERROR]     public static final String APPLICATION_JSON = "application/json";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:52: warning: no comment
-[ERROR]     public static final String HTTP_RESPONSE_CODE = "httpResponseCode";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:55: warning: no comment
-[ERROR]     public static final String HTTP_RESPONSE_ENTITY = "httpResponseEntity";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:51: warning: no comment
-[ERROR]     public static final String PORT = "port";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:53: warning: no comment
-[ERROR]     public static final String RESPONSE_OBJECT = "responseObject";
-[ERROR]                                ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:63: warning: no comment
-[ERROR]     public HttpClientSteps(ScenarioState scenarioState) {
-[ERROR]            ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:73: warning: no comment
-[ERROR]     public void iPerformAGetOnProvidedUrl(String uri) throws Throwable {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:88: warning: no comment
-[ERROR]     public void iPerformAPostTWithProvidedJsonData(String uri, String jsonFile) throws Throwable {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:106: warning: no comment
-[ERROR]     public void iPerformAPutOnWithProvidedJsonData(String uri, String jsonFile) throws Throwable {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:68: warning: no comment
-[ERROR]     public static String readFile(String path) throws IOException {
-[ERROR]                          ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:152: warning: no comment
-[ERROR]     public void theResponseCodeShouldBe(String responseCode) throws Throwable {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:138: warning: no comment
-[ERROR]     public void theResponseShouldMapToAListOf(String classMapping) throws Throwable {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:124: warning: no comment
-[ERROR]     public void theResponseShouldMapToProvidedClass(String classMapping) throws Throwable {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/HttpClientSteps.java:158: warning: no comment
-[ERROR]     public void theResponseShouldMatchProvidedJson(String expectedJson) throws Throwable {
-[ERROR]                 ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/JsonWebTokenSteps.java:3: warning: no comment
-[ERROR] public class JsonWebTokenSteps {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-feature/src/main/java/org/deveasy/test/feature/steps/JsonWebTokenSteps.java:3: warning: use of default constructor, which does not provide a comment
-[ERROR] public class JsonWebTokenSteps {
-[ERROR]        ^
-[ERROR] /Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/test-cloud-aws/src/main/java/org/deveasy/test/cloud/aws/internal/LocalStackHolder.java:63: warning: no comment
-[ERROR]     public static LocalStackContainer ensureStartedDynamoDB() {
-[ERROR]                                       ^
-[ERROR] 1 error
-[ERROR] 100 warnings
-[ERROR] Command line was: /Users/josepharuja/.sdkman/candidates/java/21.0.7-tem/bin/javadoc @options @packages
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:3.4.1:enforce (enforce) on project dev-easy-test:
+[ERROR] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence failed with message:
+[ERROR] Failed while enforcing releasability.
 [ERROR]
-[ERROR] Refer to the generated Javadoc files in '/Users/josepharuja/Documents/projects/jsr/dev-easy-test-api/target/site/apidocs' dir.
+[ERROR] Dependency convergence error for org.ow2.asm:asm:jar:5.0.4 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.github.tomakehurst:wiremock:jar:2.16.0:compile
+[ERROR]     +-com.jayway.jsonpath:json-path:jar:2.4.0:compile
+[ERROR]       +-net.minidev:json-smart:jar:2.3:compile
+[ERROR]         +-net.minidev:accessors-smart:jar:1.2:compile
+[ERROR]           +-org.ow2.asm:asm:jar:5.0.4:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-com.github.jnr:jnr-unixsocket:jar:0.8:compile
+[ERROR]         +-com.github.jnr:jnr-ffi:jar:2.0.3:compile
+[ERROR]           +-org.ow2.asm:asm:jar:5.0.3:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-com.github.jnr:jnr-unixsocket:jar:0.8:compile
+[ERROR]         +-com.github.jnr:jnr-ffi:jar:2.0.3:compile
+[ERROR]           +-org.ow2.asm:asm-tree:jar:5.0.3:compile
+[ERROR]             +-org.ow2.asm:asm:jar:5.0.3:compile
+[ERROR]
+[ERROR]
+[ERROR] Dependency convergence error for org.codehaus.plexus:plexus-utils:jar:3.0.20 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-core:jar:3.3.3:compile
+[ERROR]       +-org.apache.maven:maven-model:jar:3.3.3:compile
+[ERROR]         +-org.codehaus.plexus:plexus-utils:jar:3.0.20:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-core:jar:3.3.3:compile
+[ERROR]       +-org.apache.maven:maven-settings:jar:3.3.3:compile
+[ERROR]         +-org.codehaus.plexus:plexus-utils:jar:3.0.20:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-core:jar:3.3.3:compile
+[ERROR]       +-org.apache.maven:maven-settings-builder:jar:3.3.3:compile
+[ERROR]         +-org.apache.maven:maven-builder-support:jar:3.3.3:compile
+[ERROR]           +-org.codehaus.plexus:plexus-utils:jar:3.0.20:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-core:jar:3.3.3:compile
+[ERROR]       +-org.apache.maven:maven-settings-builder:jar:3.3.3:compile
+[ERROR]         +-org.codehaus.plexus:plexus-utils:jar:3.0.20:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-core:jar:3.3.3:compile
+[ERROR]       +-org.apache.maven:maven-repository-metadata:jar:3.3.3:compile
+[ERROR]         +-org.codehaus.plexus:plexus-utils:jar:3.0.20:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-core:jar:3.3.3:compile
+[ERROR]       +-org.apache.maven:maven-model-builder:jar:3.3.3:compile
+[ERROR]         +-org.codehaus.plexus:plexus-utils:jar:3.0.20:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-core:jar:3.3.3:compile
+[ERROR]       +-org.apache.maven:maven-aether-provider:jar:3.3.3:compile
+[ERROR]         +-org.codehaus.plexus:plexus-utils:jar:3.0.20:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-core:jar:3.3.3:compile
+[ERROR]       +-org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.3.0:compile
+[ERROR]         +-org.codehaus.plexus:plexus-utils:jar:3.0.17:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-core:jar:3.3.3:compile
+[ERROR]       +-org.codehaus.plexus:plexus-utils:jar:3.0.20:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-core:jar:3.3.3:compile
+[ERROR]       +-org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[ERROR]         +-org.codehaus.plexus:plexus-utils:jar:1.5.5:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-org.apache.maven:maven-artifact:jar:3.3.3:compile
+[ERROR]       +-org.codehaus.plexus:plexus-utils:jar:3.0.20:compile
+[ERROR]
+[ERROR]
+[ERROR] Dependency convergence error for com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.8.8 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.8.8:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-org.glassfish.jersey.media:jersey-media-json-jackson:jar:2.22.2:compile
+[ERROR]         +-com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.5.4:compile
+[ERROR]
+[ERROR]
+[ERROR] Dependency convergence error for com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.8.8 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.8.8:compile
+[ERROR]         +-com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.8.8:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-org.glassfish.jersey.media:jersey-media-json-jackson:jar:2.22.2:compile
+[ERROR]         +-com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.5.4:compile
+[ERROR]
+[ERROR]
+[ERROR] Dependency convergence error for org.apache.commons:commons-compress:jar:1.3 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.wix:wix-embedded-mysql:jar:1.0.1:compile
+[ERROR]     +-de.flapdoodle.embed:de.flapdoodle.embed.process:jar:1.41.2:compile
+[ERROR]       +-org.apache.commons:commons-compress:jar:1.3:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-org.apache.commons:commons-compress:jar:1.9:compile
+[ERROR]
+[ERROR]
+[ERROR] Dependency convergence error for org.apache.httpcomponents:httpcore:jar:4.4.9 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-org.apache.httpcomponents:httpclient:jar:4.5.5:compile
+[ERROR]     +-org.apache.httpcomponents:httpcore:jar:4.4.9:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-org.apache.httpcomponents:httpcore:jar:4.4.5:compile
+[ERROR]
+[ERROR]
+[ERROR] Dependency convergence error for org.apache.commons:commons-lang3:jar:3.1 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.wix:wix-embedded-mysql:jar:1.0.1:compile
+[ERROR]     +-de.flapdoodle.embed:de.flapdoodle.embed.process:jar:1.41.2:compile
+[ERROR]       +-org.apache.commons:commons-lang3:jar:3.1:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.github.tomakehurst:wiremock:jar:2.16.0:compile
+[ERROR]     +-org.apache.commons:commons-lang3:jar:3.6:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.github.tomakehurst:wiremock:jar:2.16.0:compile
+[ERROR]     +-com.github.jknack:handlebars:jar:4.0.6:compile
+[ERROR]       +-org.apache.commons:commons-lang3:jar:3.1:compile
+[ERROR]
+[ERROR]
+[ERROR] Dependency convergence error for com.fasterxml.jackson.core:jackson-core:jar:2.9.4 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.fasterxml.jackson.core:jackson-databind:jar:2.9.4:compile
+[ERROR]     +-com.fasterxml.jackson.core:jackson-core:jar:2.9.4:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.github.tomakehurst:wiremock:jar:2.16.0:compile
+[ERROR]     +-com.fasterxml.jackson.core:jackson-core:jar:2.8.9:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.github.tomakehurst:wiremock:jar:2.16.0:compile
+[ERROR]     +-com.flipkart.zjsonpatch:zjsonpatch:jar:0.3.0:compile
+[ERROR]       +-com.fasterxml.jackson.core:jackson-core:jar:2.8.5:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.8.8:compile
+[ERROR]         +-com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.8.8:compile
+[ERROR]           +-com.fasterxml.jackson.core:jackson-core:jar:2.8.8:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.8.8:compile
+[ERROR]         +-com.fasterxml.jackson.core:jackson-core:jar:2.8.8:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.8.8:compile
+[ERROR]         +-com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.8.8:compile
+[ERROR]           +-com.fasterxml.jackson.core:jackson-core:jar:2.8.8:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-com.fasterxml.jackson.datatype:jackson-datatype-guava:jar:2.8.8:compile
+[ERROR]         +-com.fasterxml.jackson.core:jackson-core:jar:2.8.8:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.google.auth:google-auth-library-oauth2-http:jar:0.6.0:compile
+[ERROR]       +-com.google.http-client:google-http-client-jackson2:jar:1.19.0:compile
+[ERROR]         +-com.fasterxml.jackson.core:jackson-core:jar:2.1.3:compile
+[ERROR]
+[ERROR]
+[ERROR] Dependency convergence error for org.slf4j:slf4j-api:jar:1.7.10 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.wix:wix-embedded-mysql:jar:1.0.1:compile
+[ERROR]     +-de.flapdoodle.embed:de.flapdoodle.embed.process:jar:1.41.2:compile
+[ERROR]       +-org.slf4j:slf4j-api:jar:1.7.10:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.github.tomakehurst:wiremock:jar:2.16.0:compile
+[ERROR]     +-com.jayway.jsonpath:json-path:jar:2.4.0:compile
+[ERROR]       +-org.slf4j:slf4j-api:jar:1.7.25:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.github.tomakehurst:wiremock:jar:2.16.0:compile
+[ERROR]     +-org.slf4j:slf4j-api:jar:1.7.12:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.github.tomakehurst:wiremock:jar:2.16.0:compile
+[ERROR]     +-com.github.jknack:handlebars:jar:4.0.6:compile
+[ERROR]       +-org.slf4j:slf4j-api:jar:1.6.4:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-org.slf4j:slf4j-api:jar:1.7.22:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-ch.qos.logback:logback-classic:jar:1.2.1:compile
+[ERROR]         +-org.slf4j:slf4j-api:jar:1.7.22:compile
+[ERROR]
+[ERROR]
+[ERROR] Dependency convergence error for com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.fasterxml.jackson.core:jackson-databind:jar:2.9.4:compile
+[ERROR]     +-com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.github.tomakehurst:wiremock:jar:2.16.0:compile
+[ERROR]     +-com.fasterxml.jackson.core:jackson-annotations:jar:2.8.9:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.8.8:compile
+[ERROR]         +-com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.8.8:compile
+[ERROR]           +-com.fasterxml.jackson.core:jackson-annotations:jar:2.8.0:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-org.glassfish.jersey.media:jersey-media-json-jackson:jar:2.22.2:compile
+[ERROR]         +-com.fasterxml.jackson.core:jackson-annotations:jar:2.5.4:compile
+[ERROR]
+[ERROR]
+[ERROR] Dependency convergence error for commons-io:commons-io:jar:2.4 paths to dependency are:
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.wix:wix-embedded-mysql:jar:1.0.1:compile
+[ERROR]     +-de.flapdoodle.embed:de.flapdoodle.embed.process:jar:1.41.2:compile
+[ERROR]       +-commons-io:commons-io:jar:2.4:compile
+[ERROR] and
+[ERROR] +-org.deveasy:dev-easy-test:pom:0.3.0-alpha1-private.1
+[ERROR]   +-com.spotify:docker-maven-plugin:jar:1.0.0:compile
+[ERROR]     +-com.spotify:docker-client:jar:shaded:8.7.1:compile
+[ERROR]       +-commons-io:commons-io:jar:2.5:compile
 [ERROR] -> [Help 1]
 [ERROR]
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
