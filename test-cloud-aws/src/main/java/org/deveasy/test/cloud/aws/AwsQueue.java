@@ -39,12 +39,41 @@ public final class AwsQueue implements Queue {
 
     @Override
     public void ensureQueue(String name) {
+        // LocalStack SQS can respond with 500s while warming up. Be resilient and idempotent.
+        Instant deadline = Instant.now().plusSeconds(15);
+        SqsException last = null;
+        int attempt = 0;
+        while (Instant.now().isBefore(deadline)) {
+            // 1) Try to resolve existing queue URL (fast path)
+            try {
+                getQueueUrl(name);
+                return; // exists
+            } catch (QueueDoesNotExistException e) {
+                // proceed to creation path
+            } catch (SqsException e) {
+                // transient error on GetQueueUrl; try create path below
+                last = e;
+            }
+
+            // 2) Try to create the queue (idempotent; safe if it already exists)
+            try {
+                sqs.createQueue(CreateQueueRequest.builder().queueName(name).build());
+                // After create, loop will re-try getQueueUrl and return
+            } catch (SqsException e) {
+                last = e;
+                // ignore and retry until deadline (e.g., 500 during warm-up)
+            }
+
+            // Backoff before next iteration
+            try { Thread.sleep(Math.min(1000, 100 * (1 << Math.min(5, attempt++)))); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); }
+        }
+
+        // One last attempt to resolve before giving up
         try {
             getQueueUrl(name);
         } catch (SqsException e) {
-            // LocalStack may return HTTP 500 for missing queue on GetQueueUrl; treat as not-exist and create
-            // QueueDoesNotExistException is a subclass of SqsException, so this covers both cases
-            sqs.createQueue(CreateQueueRequest.builder().queueName(name).build());
+            if (last != null) throw last;
+            throw e;
         }
     }
 
@@ -54,6 +83,7 @@ public final class AwsQueue implements Queue {
             String url = getQueueUrl(name);
             sqs.deleteQueue(DeleteQueueRequest.builder().queueUrl(url).build());
         } catch (QueueDoesNotExistException ignored) {
+            // Queue doesn't exist; deletion is idempotent, so this is acceptable
         }
     }
 
